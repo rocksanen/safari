@@ -1,0 +1,124 @@
+main {
+
+    margin: 0%;
+    background: linear-gradient(141deg, #0e2b36 0%, #1fc8db 51%, #0a958c  75%);
+    
+  }
+  
+  .wrapper {
+
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    scroll-behavior: smooth;
+    
+  }
+  
+  header {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: 0;
+    opacity: 1;
+
+  }
+
+  .trees {
+
+    transform: translateZ(-5px) scale(1.4);
+    position: absolute;
+    height: 120%;
+    width: 108%;
+    object-fit:cover;
+    z-index: -1;
+   
+  }
+
+  .sun {
+
+    transform: translateZ(-10px) scale(2.3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top:0%;
+    margin-left: 16%;
+    object-fit: cover;
+    z-index: -1;
+    
+  }
+
+  #sunset{          
+
+    transform: translateZ(-10px) scale(2.3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top:0%;
+    margin-left: 16%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    filter:saturate(500)
+
+  }
+
+  .stars {
+
+    transform: translateZ(-20px) scale(3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top: 0%;
+    object-fit: cover;
+    z-index: -5;
+    animation: opacity 0.08s infinite alternate;
+  
+  }
+
+  .title {
+    
+    display: flex;
+    font-size: 7vw;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px rgb(22, 98, 211);;
+    margin-top: -16%;
+    margin-right: 0%;
+    margin-left: 48%;
+    border-radius: 5%;
+
+  }
+  
+
+
+  @keyframes spingear {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(20deg);}
+  }
+
+  @keyframes opacity {
+    0% {opacity: 0.7;}
+    100% {opacity:0.79;}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  

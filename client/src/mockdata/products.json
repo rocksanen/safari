@@ -1,0 +1,223 @@
+
+
+
+[
+    {
+      "id": 1,
+      "name": "Erä pannu",
+      "price": "599.99€",
+      "stock": 50,
+      "description": "Kuolet ilman tätä",
+      "photo": "productImages/pannu.jpg"
+     ,
+      "details": [
+        {
+          "label": "Pannu",
+          "value": "20 senttii kertaa 20 senttii"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Myrkyt ja uhanalaiset eläimet"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Vaelluskengät",
+      "price": "43.88€",
+      "stock": 20,
+      "description": "Huippu kestävät vaelluskengät vaativaan kompasteluun",
+      "photo": "productImages/magicshoes.jpg",
+      "details": [
+        {
+          "label": "Väri",
+          "value": "Tylsän beige/sinappikakka"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Puuta ja nahkaa"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Vaellushärkä",
+      "price": "1250.00€",
+      "stock": 3,
+      "description": "Kunnon vaellushärkä, unohda turha reppu ja ole moderni seikkailija",
+      "photo": "productImages/myski.jpg",
+      "details": [
+        {
+          "label": "Väri",
+          "value": "Katso kuvasta"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Verta, lihaa ja karvoja"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Ruokailusetti",
+      "price": "75€",
+      "stock": 100,
+      "description": "Voit syödä sivistyneesti myös metsässä",
+      "photo": "productImages/ruokasetti.jpg",
+      "details": [
+        {
+          "label": "Väri",
+          "value": "Hopea"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Metallica"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Selviytymiskirja",
+      "price": "25€",
+      "stock": 15,
+      "description": "Leppoisaa luettavaa kun hätä yllättää",
+      "photo": "productImages/kirja.jpg",
+      "details": [ 
+        {
+          "label": "Sivuja",
+          "value": "2700"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Riisipaperia"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Teltta",
+      "price": "250€",
+      "stock": 7,
+      "description": "Kun kotona menee hermot, ota tämä huipputeltta ja juokse metsään",
+      "photo": "productImages/teltta.jpg",
+      "details": [ 
+        {
+          "label": "Väri",
+          "value": "Maastokuvio"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Mursunnahkaa"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Lapio",
+      "price": "799€",
+      "stock": 35,
+      "description": "Jos karhu tulee vastaan niin tällä lapiolla kaivat itsellesi nopeasti kuopan",
+      "photo": "productImages/lapio.jpg",
+      "details": [ 
+        {
+          "label": "Väri",
+          "value": "Musta"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Rautaa sen olla pitää"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Retkikeitin",
+      "price": "399€",
+      "stock": 45,
+      "description": "Jos nälkä yllättää niin tämä keitin ei sitä vie",
+      "photo": "productImages/keitin.jpg",
+      "details": [ 
+        {
+          "label": "Väri",
+          "value": "Musta"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Muovia"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Kuksa",
+      "price": "50€",
+      "stock": 125,
+      "description": "Uskottavuuden vuoksi",
+      "photo": "productImages/kuksa.jpg",
+      "details": [ 
+        {
+          "label": "Väri",
+          "value": "Puu"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Niin hyvää puuta"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Huopikas",
+      "price": "25€",
+      "stock": 30,
+      "description": "Huopikkaat jalkaan ja poteroon",
+      "photo": "productImages/huopikas.jpg",
+      "details": [ 
+        {
+          "label": "Väri",
+          "value": "Harmaa"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Kiinasta, mistä sitä tietää"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Puukko",
+      "price": "75€",
+      "stock": 45,
+      "description": "Pakollinen varuste niin metsään kuin kaduillekkin",
+      "photo": "productImages/puukko.jpg",
+      "details": [ 
+        {
+          "label": "Väri",
+          "value": "Verinen"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Zirkonium"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Kuulosuojain",
+      "price": "125€",
+      "stock": 50,
+      "description": "Kun metsän melusaaste käy ylivoimaiseksi",
+      "photo": "productImages/kuulosuojain.jpg",
+      "details": [ 
+        {
+          "label": "Väri",
+          "value": "Vihreä"
+        },
+        {
+          "label": "Materiaali",
+          "value": "Sitäsuntätä"
+        }
+      ]
+    }
+    
+  ]

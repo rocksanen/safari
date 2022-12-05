@@ -1,0 +1,107 @@
+.product-view {
+    min-height: 100vh;
+    background-color: rgba(255, 160, 122, 0.936);
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 100%;  
+  }
+
+  .mainstuff{
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(170, 224, 234, 0);
+    margin-top: 4.5%;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: flex;  
+  }
+  
+  .product-main-area {
+    padding: 25px;
+    flex: 1 1 auto;
+    z-index: 0;
+  }
+  
+  .product-side-panel {
+    border-left: solid black 0px;
+    background-color: lightcoral;
+    flex: 0 0 fit-content;
+    -webkit-box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
+    box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
+  }
+  
+  .product-side-panel-toggle {
+    border-right-width: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    -webkit-box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
+    box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 45px;
+  }
+  
+  .product-side-panel-toggle-wrapper {
+    overflow: visible;
+    position: relative;
+    left: -20px;
+    top: 10px;
+    width: 0;
+    height: 0;
+  }
+  
+  
+  .product-list {
+    padding: 25px;
+    background-color: rgba(209, 173, 66, 0);
+    border-radius: 1rem;
+  }
+  
+  .product-list-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid black 2px;
+    border-radius: 1rem;
+    padding: 20px;
+    margin: 25px 10px;
+    width: 150px;
+    height: 150px;
+    overflow: visible;
+  }
+  
+  .product-list-item.selected {
+    background-color: rgb(222, 199, 52);
+  }
+  
+  .product-list-item-photo {
+    width: 150px;
+    height: 116px;
+    margin-bottom: 12px;
+  }
+  
+  
+  .product-details {
+    padding: 10px;
+    width: 280px;
+    overflow: scroll;
+  }
+  
+  .product-info {
+    font-weight: bold;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
+  li.product-details-list-item {
+    margin-bottom: 8px;
+    list-style-type: square;
+  }

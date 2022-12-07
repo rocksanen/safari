@@ -1,5 +1,20 @@
 const mongoose = require('mongoose')
 
+
+const url = "mongodb+srv://xxxxxxx:xxxxxxxxxxxxxx@cluster0.ooronxc.mongodb.net/products?retryWrites=true&w=majority"
+console.log(url);
+console.log('connecting to', url)
+ 
+
+mongoose.connect(url)
+  .then(result => {
+      console.log('connected to MongoDB')
+  })
+  .catch((error) => {
+      console.log('error connecting to MongoDB:', error.message)
+  })
+  
+
 const Schema = mongoose.Schema
 
 const productSchema = new Schema({

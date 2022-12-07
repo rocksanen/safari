@@ -1,8 +1,37 @@
-main {
 
-    margin: 0%;
-    background: linear-gradient(141deg, #0e2b36 0%, #1fc8db 51%, #0a958c  75%);
-    
+main {
+  margin: 0;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+
+#background {
+
+  transform: translateZ(-25px) scale(4);
+  position: absolute;
+  max-height: 70%;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  top: 0%;
+  object-fit:cover;
+  background-image: 
+  linear-gradient(
+    200deg, 
+    hsla(187, 100%, 69%, 1),
+    hsla(187, 100%, 69%, 0.13) 70%), 
+    linear-gradient(130deg, 
+    rgba(255, 97, 255, 0.856), 
+    hsla(300, 100%, 69%, 0.11) 70%), 
+    linear-gradient(330deg, 
+    hsla(0, 100%, 69%, 1), 
+    hsla(0, 100%, 69%, 0.423) 70%);
+
+  height: 100vh;
+  width: 100vw;
+  opacity: 1;
+  
   }
   
   .wrapper {
@@ -12,19 +41,44 @@ main {
     overflow-x: hidden;
     perspective: 10px;
     scroll-behavior: smooth;
+    z-index: 5;
     
   }
   
-  header {
+  #parallerheader {
 
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 120%;
     transform-style: preserve-3d;
-    z-index: 0;
+    z-index: 4;
     opacity: 1;
+
+  }
+
+  .stars {
+
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin-top: 0%;
+    object-fit: cover;
+
+  }
+
+  #rotator{
+    transform-style: preserve-3d;
+    transform: translateZ(-20px) scale(3);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin-top: 0%;
+    object-fit: cover;
+    animation: opacity 0.08s infinite alternate;
+    /*animation: spingear 5s infinite linear;*/
+    z-index: -4;
 
   }
 
@@ -34,8 +88,9 @@ main {
     position: absolute;
     height: 120%;
     width: 108%;
+    margin-left: 0%;
+    margin-right: 0%;
     object-fit:cover;
-    z-index: -1;
    
   }
 
@@ -45,10 +100,10 @@ main {
     position: absolute;
     height: 100%;
     width: 100%;
-    margin-top:0%;
+    margin-top:3.5%;
     margin-left: 16%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 2;
     
   }
 
@@ -58,27 +113,16 @@ main {
     position: absolute;
     height: 100%;
     width: 100%;
-    margin-top:0%;
+    margin-top:3.5%;
     margin-left: 16%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 2;
     opacity: 0;
     filter:saturate(500)
 
   }
 
-  .stars {
 
-    transform: translateZ(-20px) scale(3);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    margin-top: 0%;
-    object-fit: cover;
-    z-index: -5;
-    animation: opacity 0.08s infinite alternate;
-  
-  }
 
   .title {
     
@@ -102,8 +146,8 @@ main {
   }
 
   @keyframes opacity {
-    0% {opacity: 0.7;}
-    100% {opacity:0.79;}
+    0% {opacity: 0.75;}
+    100% {opacity:0.89;}
   }
 
 

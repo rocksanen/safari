@@ -1,0 +1,73 @@
+.auth-form-container{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+  	align-items: center;
+  	justify-content: center;
+  	color: white;
+	background: 
+	-webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), 
+	-webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), 
+	-webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+  }
+
+  .login-form{
+
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+  	align-items: center;
+  	justify-content: center;
+  	color: white;
+
+
+  }
+
+  .register-form {
+
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+  	align-items: center;
+  	justify-content: center;
+  	color: white;
+
+  }
+  
+  @media screen and (min-width: 600px) {
+	.auth-form-container {
+	  padding: 5px;
+	  border: 1px solid white;
+	  border-radius: 10px;
+	  margin: 0.5rem;
+	}
+  }
+  
+  label {
+	text-align: left;
+	padding: 0.25rem 0;
+  }
+  
+  input {
+	margin: 0.5rem 0;
+	padding: 1rem;
+	border: none;
+	border-radius: 10px;
+  }
+  
+  #register, #login {
+	border: none;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #7439db;
+  }
+  
+  .link-btn {
+	margin-top: 5%;
+	padding: 5px;
+	background: none;
+	color: white;
+	text-decoration: underline;
+  }

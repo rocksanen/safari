@@ -1,8 +1,10 @@
 
 import '../styles/productView.css';
 import ProductDetails from './productDetails';
+import SignInUp from './SignInUp';
 
-const Sidebar = ({product, setSideOpen, sideOpen}) => {
+
+const Sidebar = ({product, setSideOpen, sideOpen, logged}) => {
 
     return(
 
@@ -14,6 +16,7 @@ const Sidebar = ({product, setSideOpen, sideOpen}) => {
                 </div>
             </div>
             <ProductDetails visible={sideOpen} product = {product} />
+            <SignInUp visible={sideOpen}/>
         </div>
     )
 }

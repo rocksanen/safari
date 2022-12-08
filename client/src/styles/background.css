@@ -5,7 +5,6 @@ main {
   background-color: rgb(0, 0, 0);
 }
 
-
 #background {
 
   transform: translateZ(-25px) scale(4);

@@ -9,7 +9,7 @@ import '../styles/background.css';
 const Background = () => 
 
     <header id='parallerheader'> 
-    <div id = 'background'> </div>  
+    <div id = 'background'></div>  
     <div id='rotator'>
         <img src={stars} className="stars" id="stars" alt="stars"/>
     </div>

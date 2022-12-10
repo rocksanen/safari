@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt')
 const validator = require('validator')
 
 /*
-const url = 'mongodb+srv://xxx:xxx@cluster0.ooronxc.mongodb.net/users?retryWrites=true&w=majority'
+
+const url = 'mongodb+srv://xxxxxx:xxxxxx@cluster0.ooronxc.mongodb.net/users?retryWrites=true&w=majority'
 console.log(url);
 console.log('connecting to', url)
  

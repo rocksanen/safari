@@ -21,7 +21,8 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/products', productRoutes)
-app.use('/api/user', userRoutes)
+app.use('/user', userRoutes)
+
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')

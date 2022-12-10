@@ -1,12 +1,10 @@
-const Products = require('../models/productModel')
+const Product = require('../models/productModel')
 const mongoose = require('mongoose')
 
 // get all products
 const getProducts = async (req, res) => {
   
-  const products = await Products.find({}).sort({createdAt: -1})
-
-  console.log(products);
+  const products = await Product.find({}).sort({createdAt: -1})
   res.status(200).json(products)
 }
 
@@ -18,7 +16,7 @@ const getProduct = async (req, res) => {
     return res.status(404).json({error: 'No such product, not valid id'})
   }
 
-  const product = await Products.findById(id)
+  const product = await Product.findById(id)
 
   if (!product) {
     return res.status(404).json({error: 'No such product'})
@@ -54,33 +52,27 @@ const createProduct = async (req, res) => {
   // add doc to db
   try {
     const product_id = req.body._id
-    const product = await Products.create({name, price, description,details,product_id})
+    const product = await Product.create({name, price, description,details,product_id})
     res.status(200).json(product)
   } catch (error) {
     res.status(400).json({error: error.message})
   }
 }
 
-// delete a workout
 
-/*
-const deleteWorkout = async (req, res) => {
-  const { id } = req.params
+// delete a product
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: 'No such workout'})
+const deleteProduct = async (req, res) => {
+  const {id} = req.params;
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    return res.status(404).json({error: 'No such product'})
   }
-
-  const workout = await Workout.findOneAndDelete({_id: id})
-
-  if (!workout) {
-    return res.status(400).json({error: 'No such workout'})
+  const product = await Product.findOneAndDelete({_id: id})
+  if(!product){
+    return res.status(400).json({error: 'No such product'})
   }
-
-  res.status(200).json(workout)
+  res.status(200).json(product);
 }
-
-*/
 
 // update a product
 const updateProduct = async (req, res) => {
@@ -90,7 +82,7 @@ const updateProduct = async (req, res) => {
     return res.status(404).json({error: 'No such product'})
   }
 
-  const product = await Workout.findOneAndUpdate({_id: id}, {
+  const product = await Product.findOneAndUpdate({_id: id}, {
     ...req.body
   })
 
@@ -106,5 +98,6 @@ module.exports = {
   getProducts: getProducts,
   getProduct: getProduct,
   createProduct: createProduct,
-  updateProduct: updateProduct
+  updateProduct: updateProduct,
+  deleteProduct: deleteProduct
 }

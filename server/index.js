@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 // connect to db
-mongoose.connect("mongodb+srv://safari:safariproject2@cluster0.ooronxc.mongodb.net/products?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://xxxx:xxxxxx@cluster0.ooronxc.mongodb.net/products?retryWrites=true&w=majority")
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {

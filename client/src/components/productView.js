@@ -11,6 +11,7 @@ function ProductView({products}) {
     const [logSideOpen,setLogSideOpen] = useState(false)
     const [selectedProduct, setSelectedProduct] = useState('')
 
+
   return (
 
     <section className='mainstuff' id='mainstuff' >

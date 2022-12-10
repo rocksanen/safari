@@ -23,12 +23,13 @@ app.use((req, res, next) => {
 app.use('/api/products', productRoutes)
 app.use('/user', userRoutes)
 
+
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
 })
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect("mongodb+srv://safari:safariproject2@cluster0.ooronxc.mongodb.net/products?retryWrites=true&w=majority")
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {

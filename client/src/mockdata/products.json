@@ -8,7 +8,7 @@
       "price": "599.99€",
       "stock": 50,
       "description": "Kuolet ilman tätä",
-      "photo": "productImages/pannu.jpg"
+      "photo": "https://images.unsplash.com/photo-1601043966939-687b89dc6f9c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MTkyMjc&ixlib=rb-4.0.3&q=80"
      ,
       "details": [
         {
@@ -27,7 +27,7 @@
       "price": "43.88€",
       "stock": 20,
       "description": "Huippu kestävät vaelluskengät vaativaan kompasteluun",
-      "photo": "productImages/magicshoes.jpg",
+      "photo": "https://images.unsplash.com/photo-1520219306100-ec4afeeefe58?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MTkzNjU&ixlib=rb-4.0.3&q=80",
       "details": [
         {
           "label": "Väri",
@@ -45,7 +45,7 @@
       "price": "1250.00€",
       "stock": 3,
       "description": "Kunnon vaellushärkä, unohda turha reppu ja ole moderni seikkailija",
-      "photo": "productImages/myski.jpg",
+      "photo": "https://images.unsplash.com/photo-1667405653780-5ff661b43437?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MTk0NDg&ixlib=rb-4.0.3&q=80",
       "details": [
         {
           "label": "Väri",
@@ -63,7 +63,7 @@
       "price": "75€",
       "stock": 100,
       "description": "Voit syödä sivistyneesti myös metsässä",
-      "photo": "productImages/ruokasetti.jpg",
+      "photo": "https://images.unsplash.com/photo-1582828462913-ff94884827ba?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MTk1ODc&ixlib=rb-4.ixlib=rb-4.0.3&q=80",
       "details": [
         {
           "label": "Väri",
@@ -81,7 +81,7 @@
       "price": "25€",
       "stock": 15,
       "description": "Leppoisaa luettavaa kun hätä yllättää",
-      "photo": "productImages/kirja.jpg",
+      "photo": "https://images.unsplash.com/photo-1625391134693-89cd9891e940?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MTk2NjI&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Sivuja",
@@ -99,7 +99,7 @@
       "price": "250€",
       "stock": 7,
       "description": "Kun kotona menee hermot, ota tämä huipputeltta ja juokse metsään",
-      "photo": "productImages/teltta.jpg",
+      "photo": "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MTk3MjE&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Väri",
@@ -117,7 +117,7 @@
       "price": "799€",
       "stock": 35,
       "description": "Jos karhu tulee vastaan niin tällä lapiolla kaivat itsellesi nopeasti kuopan",
-      "photo": "productImages/lapio.jpg",
+      "photo": "https://images.unsplash.com/photo-1651197227940-60c9d32f89e7?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MjAwNzk&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Väri",
@@ -135,7 +135,7 @@
       "price": "399€",
       "stock": 45,
       "description": "Jos nälkä yllättää niin tämä keitin ei sitä vie",
-      "photo": "productImages/keitin.jpg",
+      "photo": "https://images.unsplash.com/photo-1522041350204-22285237eeca?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MjA0MTc&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Väri",
@@ -153,7 +153,7 @@
       "price": "50€",
       "stock": 125,
       "description": "Uskottavuuden vuoksi",
-      "photo": "productImages/kuksa.jpg",
+      "photo": "https://images.unsplash.com/photo-1658509565784-d425ada6c327?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MjA1ODY&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Väri",
@@ -167,11 +167,11 @@
     },
     {
       "id": 10,
-      "name": "Huopikas",
+      "name": "Maasto korkkarit",
       "price": "25€",
       "stock": 30,
-      "description": "Huopikkaat jalkaan ja poteroon",
-      "photo": "productImages/huopikas.jpg",
+      "description": "Jos metsään menet niin takuulla yllätyt...",
+      "photo": "https://images.unsplash.com/photo-1601924638867-3a6de6b7a500?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MjA3MzM&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Väri",
@@ -189,7 +189,7 @@
       "price": "75€",
       "stock": 45,
       "description": "Pakollinen varuste niin metsään kuin kaduillekkin",
-      "photo": "productImages/puukko.jpg",
+      "photo": "https://images.unsplash.com/photo-1588597575483-f4e43e191c94?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MTc5ODM&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Väri",
@@ -207,7 +207,7 @@
       "price": "125€",
       "stock": 50,
       "description": "Kun metsän melusaaste käy ylivoimaiseksi",
-      "photo": "productImages/kuulosuojain.jpg",
+      "photo": "https://images.unsplash.com/photo-1484081064812-86e90e107fa8?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2MjA5MjY&ixlib=rb-4.0.3&q=80",
       "details": [ 
         {
           "label": "Väri",

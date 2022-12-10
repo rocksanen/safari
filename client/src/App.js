@@ -2,11 +2,9 @@
 import './styles/background.css';
 import Background from './components/background'
 import {useState,useEffect,useRef} from 'react'
-import products from "./mockdata/products.json";
 import ProductView from './components/productView';
 
-
-
+const API_URL=process.env.REACT_APP_API_URL;
 
 function App() {
 
@@ -14,14 +12,27 @@ function App() {
   const [mainstuff,setMainStuff] = useState(null)
   const [sunset,setSunset] = useState(null)
   const [background,setBackground] = useState(null)
+  const [products,setProducts] = useState([])
 
   useEffect(() => {
+
+    fetchProduct()
 
     setMainStuff(document.getElementById('mainstuff'))
     setSunset(document.getElementById('sunset'))
     setBackground(document.getElementById('background'))
 
-  },[]);
+  },[])
+
+
+  const fetchProduct = async () => {
+
+    const response = await fetch(API_URL + '/products/')
+    const json = await response.json()
+
+    response.ok ? setProducts(json) : setProducts([])
+
+  }
 
   const handleScroll = (e) => {
 

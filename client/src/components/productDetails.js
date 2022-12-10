@@ -17,7 +17,7 @@ const ProductDetails = ({product, visible}) => {
       <div className="product-details">
         <p className="product-info">{product.name}</p>
           <p>{product.description}</p>
-            <p className="product-price">{product.price}</p>
+            <p className="product-price">{product.price}€</p>
               <p>Tiedot</p>
               <ul>
                 {product.details.map((item, index) => 

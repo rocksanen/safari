@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
 
-
-const url = 'mongodb+srv://xxxxxxx:xxxxxxxxxxxxxx@cluster0.ooronxc.mongodb.net/users?retryWrites=true&w=majority'
+/*
+const url = 'mongodb+srv://xxx:xxx@cluster0.ooronxc.mongodb.net/users?retryWrites=true&w=majority'
 console.log(url);
 console.log('connecting to', url)
  
@@ -16,7 +16,7 @@ mongoose.connect(url)
   .catch((error) => {
       console.log('error connecting to MongoDB:', error.message)
   })
-  
+  */
 
 const Schema = mongoose.Schema
 

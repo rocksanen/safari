@@ -2,6 +2,7 @@
 import '../styles/productView.css';
 import ProductListItem from "../scripts/ProductListItem"; 
 
+
 const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products}) => {
 
     return(

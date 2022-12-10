@@ -1,33 +1,17 @@
 const mongoose = require('mongoose')
 
-
-const url = "mongodb+srv://xxx:xxx@cluster0.ooronxc.mongodb.net/products?retryWrites=true&w=majority"
-console.log(url);
-console.log('connecting to', url)
- 
-
-mongoose.connect(url)
-  .then(result => {
-      console.log('connected to MongoDB')
-  })
-  .catch((error) => {
-      console.log('error connecting to MongoDB:', error.message)
-  })
-  
-
 const Schema = mongoose.Schema
 
 const productSchema = new Schema({
-  _id: {
+  id: {
     type: Number,
-    required: true
   },
   name: {
     type: String,
     required: true
   },
   price: {
-    type: String,
+    type: Number,
     required: true
   },
   stock: {
@@ -39,25 +23,39 @@ const productSchema = new Schema({
     required: true
   },
   photo: {
-    filename: {
       type: String,
       required: true
-    }
   },
   details: [
     {
       label:{
         type: String,
         required: true
+      },
+      value:{
+        type: String
       }
     },
     {
       label:{
         type: String,
         required: true
+      },
+      value:{
+        type: String
       }
     }
   ]
 })
+
+
+productSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString()
+    delete returnedObject._id
+    delete returnedObject.__v
+  }
+})
+
 
 module.exports = mongoose.model('Product', productSchema)

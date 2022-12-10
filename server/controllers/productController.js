@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 
 // get all products
 const getProducts = async (req, res) => {
+  
+  const products = await Products.find({}).sort({createdAt: -1})
 
-  const product_id = req.product._id // Onko näin, sitä ei vielä tiedä
-  const products = await Products.find({product_id}).sort({createdAt: -1})
-
+  console.log(products);
   res.status(200).json(products)
 }
 
@@ -15,7 +15,7 @@ const getProduct = async (req, res) => {
   const { id } = req.params
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: 'No such product'})
+    return res.status(404).json({error: 'No such product, not valid id'})
   }
 
   const product = await Products.findById(id)

@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const workoutRoutes = require('./routes/workouts')
+const productRoutes = require('./routes/products')
 const userRoutes = require('./routes/user')
 
 // express app
@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/api/workouts', workoutRoutes)
+app.use('/api/products', productRoutes)
 app.use('/api/user', userRoutes)
 
 app.get('/', (req, res) => {
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 })
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect("mongodb+srv://safari:safariproject2@cluster0.ooronxc.mongodb.net/products?retryWrites=true&w=majority")
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {

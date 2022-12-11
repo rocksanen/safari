@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const url = process.env.MONGODB_URI_PRODUCTS
+const url = "mongodb+srv://safari:safariproject2@cluster0.ooronxc.mongodb.net/mydata?retryWrites=true&w=majority"
 console.log('connecting to', url)
  
 mongoose.connect(url)
@@ -286,7 +286,22 @@ const Product = mongoose.model('Product', productSchema)
 
 const product = new Product({
 
-// You can add new product here
+  id: 12,
+  name: "Kuulosuojain",
+  price: 125,
+  stock: 50,
+  description: "Kun metsän melusaaste käy ylivoimaiseksi",
+  photo: 'https://images.unsplash.com/photo-1484081064812-86e90e107fa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODgxODB8MHwxfGFsbHx8fHx8fHx8fDE2NzA2NjgyODM&ixlib=rb-4.0.3&q=80&w=200',
+  details: [ 
+    {
+      label: "Väri",
+      value: "Vihreä"
+    },
+    {
+      label: "Materiaali",
+      value: "Sitäsuntätä"
+    }
+  ]
 
 })
 

@@ -21,15 +21,16 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/products', productRoutes)
-app.use('/user', userRoutes)
+app.use('/api/user', userRoutes)
 
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
 })
 
+URI = process.env.REACT_APP_MONGODB_URI
 // connect to db
-mongoose.connect("mongodb+srv://xxxx:xxxxxx@cluster0.ooronxc.mongodb.net/products?retryWrites=true&w=majority")
+mongoose.connect(URI)
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
@@ -39,3 +40,4 @@ mongoose.connect("mongodb+srv://xxxx:xxxxxx@cluster0.ooronxc.mongodb.net/product
   .catch((error) => {
     console.log(error)
   })
+  

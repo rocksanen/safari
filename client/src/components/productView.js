@@ -16,7 +16,6 @@ function ProductView({products}) {
 
 
 
-
     const handleFilter = (event) => {
       console.log(event.target.value)
       setFilter(event.target.value)

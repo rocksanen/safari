@@ -26,7 +26,7 @@ function App() {
     fetchProduct()
 
     //fetchUser is for test purposes only!!!
-   // fetchUser()
+    //fetchUser()
 
     setMainStuff(document.getElementById('mainstuff'))
     setSunset(document.getElementById('sunset'))

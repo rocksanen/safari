@@ -5,6 +5,7 @@ import { useState } from "react";
 const Profile = ({user}) => {
   
     const [open, setOpen] =useState(false);
+    let total = 0;
 
     const handleOpen = () => {
       setOpen(!open);
@@ -29,13 +30,18 @@ const Profile = ({user}) => {
             </h4>
             <ul>
                 {user && user.orders.map((order)=>{
+                  total += order.price;
                     return(
                         <li key={order.id}>
                             {order.name} - {order.price} €
+                            
                         </li>
                     )
                 })}
             </ul>
+            <h4>
+              Total: {total} €
+            </h4>
         </div> : <div></div>}
       </div>
     );

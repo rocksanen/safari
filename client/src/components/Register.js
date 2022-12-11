@@ -14,7 +14,6 @@ const Register = (props) => {
     // --> Tänne koodi mikä hoitaa rekisteritymisen
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email, pass, name);
         await signup(email,pass,name)
     }
 

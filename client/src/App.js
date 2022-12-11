@@ -10,7 +10,8 @@ import Register from './components/Register';
 import Login from './components/login';
 
 
-const API_URL="http://localhost:4000"
+
+const API_URL='http://localhost:4000';
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
     fetchProduct()
 
     //fetchUser is for test purposes only!!!
-    fetchUser()
+   // fetchUser()
 
     setMainStuff(document.getElementById('mainstuff'))
     setSunset(document.getElementById('sunset'))
@@ -68,6 +69,8 @@ function App() {
           background.style.opacity = backgroundposition
         }
   }
+
+  
 
   return(
 

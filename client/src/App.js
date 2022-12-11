@@ -4,7 +4,7 @@ import Background from './components/background'
 import {useState,useEffect,useRef} from 'react'
 import ProductView from './components/productView';
 
-const API_URL=process.env.REACT_APP_API_URL;
+const API_URL='http://localhost:4000';
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
     fetchProduct()
 
     //fetchUser is for test purposes only!!!
-    fetchUser()
+   // fetchUser()
 
     setMainStuff(document.getElementById('mainstuff'))
     setSunset(document.getElementById('sunset'))
@@ -30,7 +30,7 @@ function App() {
 
   const fetchProduct = async () => {
 
-    const response = await fetch(API_URL + '/products/')
+    const response = await fetch(API_URL + '/api/products/')
     const json = await response.json()
 
     response.ok ? setProducts(json) : setProducts([])

@@ -3,6 +3,7 @@ import '../styles/productView.css';
 import ProductListItem from "../scripts/ProductListItem"; 
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from '../hooks/useAuthContext';
+import Profile from './profile';
 
 const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products}) => {
     const {user} = useAuthContext();
@@ -18,6 +19,7 @@ const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products}) => {
 
         {user && (
             <div>
+                <Profile user={user}/>
                 <span><b>{user.name}</b> : {user.email}</span>
                 <button onClick={handleSubmit} id="login">Log out</button>
             </div>)}

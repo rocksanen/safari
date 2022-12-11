@@ -66,7 +66,7 @@
     border-bottom-left-radius: 0.25rem;
     -webkit-box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
     box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
-    background-color: lightcoral;
+    background-color: rgb(240, 128, 128);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,7 +81,6 @@
     top: 10px;
     width: 0;
     height: 0;
-
   }
 
   .login-side-panel {
@@ -121,11 +120,12 @@
   }
 
   .sidecontainer {
-
-    margin-top: 3%;
+    margin-top: 15%;
     max-width: 25%;
-    position: relative;
-
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    right: 0;
   }
   
   /*----------------------------------------- Products---------------------------------------------- */
@@ -186,25 +186,57 @@
   }
 
   /* Shopping cart */
-
+.cart {
+  display:flex;
+  flex-direction: column;
+  margin-left: auto;
+  padding-right: 20px;
+}
   .cart-box {
     display: flex;
-    position: fixed;
-    z-index: 1;
-    min-width: 25%;
-    min-height: 30%;
-    background-color: antiquewhite;
+    min-width: 30%;
+    min-height: 80%;
+    background-color: rgba(245, 125, 84, 0.93);
     border-radius: 3%;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
+    position: absolute;
+    right: 0;
+    z-index: 999;
   }
 
   .cart-button {
-    position: relative;
     height: 3em;
-    width: 6em;
-    top: 1em;
-    left: 1em;
+    width: 3em;
     border-radius: 0;
   }
   .cart-button:hover {
     cursor: pointer;
-  }  
+  }
+
+  .close-button{
+    line-height: 12px;
+    width: 20px;
+    height: 20px;
+    font-size: 10pt;
+    margin-top: 1px;
+    margin-right: 1px;
+    position: absolute;
+    font-family: Tahoma, sans-serif;
+    border-radius: 50%;
+    border-width: 0px;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #26cc6e;
+    pointer-events: auto;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
+  }
+
+  /* cart and filter */
+.filter-cart{
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}

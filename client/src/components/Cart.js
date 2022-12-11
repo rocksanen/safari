@@ -1,11 +1,10 @@
+import icon from '../images/icons/cart-icon.png'
 const Cart = ({ cartItems, setCart, cartOpen, setCartOpen }) => {
   if (cartOpen) {
     return (
       <div className="cart">
         <div className="cart-box">
-          <button className="cart-button" onClick={() => setCartOpen(false)}>
-            Close
-          </button>
+          <button className="close-button" onClick={() => setCartOpen(false)}>x</button>
           <CartList cartItems={cartItems} />
         </div>
       </div>
@@ -13,9 +12,7 @@ const Cart = ({ cartItems, setCart, cartOpen, setCartOpen }) => {
   } else {
     return (
       <div className="cart">
-        <button className="cart-button" onClick={() => setCartOpen(true)}>
-          Open
-        </button>
+          <img src={icon} className="cart-button" onClick={() => setCartOpen(true)}/>
       </div>
     );
   }

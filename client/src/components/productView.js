@@ -40,16 +40,17 @@ function ProductView({products}) {
   return (
 
     <section className='mainstuff' id='mainstuff' >
-        
         <div className="product-view">
+            <div className="filter-cart">
             <Filter value={filter} onChange={handleFilter} />
+            <Cart cartItems={ cart } setCart = { setCart } cartOpen = { cartOpen } setCartOpen = { setCartOpen}/>
+        </div>
         <ProductMain
           products = {ItemAfterFilter}  setSideOpen = {setSideOpen} 
           sideOpen = {sideOpen} setSelectedProduct = {setSelectedProduct}/>
-            {/*<Cart cartItems={ cart } setCart = { setCart } cartOpen = { cartOpen } setCartOpen = { setCartOpen}/>*/}
             <div className='sidecontainer'>
-              <Sidebar product = {selectedProduct} setSideOpen = {setSideOpen} sideOpen = {sideOpen}/>
-              <LoginBar setSideOpen = {setLogSideOpen} sideOpen = {logSideOpen}/>
+                <Sidebar product = {selectedProduct} setSideOpen = {setSideOpen} sideOpen = {sideOpen}/>
+                <LoginBar setSideOpen = {setLogSideOpen} sideOpen = {logSideOpen}/>
             </div>
         </div>
     </section>

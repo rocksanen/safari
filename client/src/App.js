@@ -18,6 +18,9 @@ function App() {
 
     fetchProduct()
 
+    //fetchUser is for test purposes only!!!
+    fetchUser()
+
     setMainStuff(document.getElementById('mainstuff'))
     setSunset(document.getElementById('sunset'))
     setBackground(document.getElementById('background'))
@@ -31,6 +34,17 @@ function App() {
     const json = await response.json()
 
     response.ok ? setProducts(json) : setProducts([])
+
+  }
+
+  // for test purposes only
+  const fetchUser = async () => {
+
+
+    const response = await fetch(API_URL + '/user/')
+    const json = await response.json()
+
+    console.log(json);
 
   }
 

@@ -41,4 +41,11 @@ const signupUser = async (req, res) => {
   }
 }
 
-module.exports = { signupUser, loginUser }
+// For test purposes only!!!!!
+const getUsers = async (req, res) => {
+  
+  const users = await User.find({}).sort({createdAt: -1})
+  res.status(200).json(users)
+}
+// getUsers can be removed after not neede anymore
+module.exports = { signupUser, loginUser, getUsers }

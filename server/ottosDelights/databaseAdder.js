@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const url = "mongodb+srv://safari:safariproject2@cluster0.ooronxc.mongodb.net/mydata?retryWrites=true&w=majority"
+const url = process.env.REACT_APP_MONGODB_URI
 console.log('connecting to', url)
  
 mongoose.connect(url)

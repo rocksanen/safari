@@ -16,69 +16,57 @@ Content-Type: {{contentType}}
 
 
 ### POST Request
-POST {{baseurl}}/workouts/
+POST {{baseurl}}/products/
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
 
-{
-    "title":"Situps 2022-12-02",
-    "reps":60,
-    "load":1
-}
 
 ### POST Request
-POST {{baseurl}}/workouts/
+POST {{baseurl}}/products/
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
 
-{
-    "title":"Workout 2022-11-30",
-    "reps":40,
-    "load":10
-}
 
 ### GET Request
-GET {{baseurl}}/workouts
+GET {{baseurl}}/products
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
+
 
 ### GET Request
-GET {{baseurl}}/workouts/6386e10ad8e5f9250c33591a
+GET {{baseurl}}/products/639466622640089cf715e9b0
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
+
 
 ### GET Request (Authorization error)
-GET {{baseurl}}/workouts/6379e1849df16cc3df69bcb2
+GET {{baseurl}}/products/6379e1849df16cc3df69bcb2
 Content-Type: {{contentType}}
 
 ### GET Request (does not exist)
-GET {{baseurl}}/workouts/625158890e75b4ff2a109ab9999
+GET {{baseurl}}/products/625158890e75b4ff2a109ab9999
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
+
 
 
 ### DELET Request   (Authorization error)
-DELETE {{baseurl}}/workouts/625158890e75b4ff2a109ab9999
+DELETE {{baseurl}}/products/625158890e75b4ff2a109ab9999
 Content-Type: {{contentType}}
 
 ### DELET Request
-DELETE {{baseurl}}/workouts/6386e10ad8e5f9250c33591a
+DELETE {{baseurl}}/products/6386e10ad8e5f9250c33591a
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
+
 
 ### DELET Request  (does not exist)
-DELETE {{baseurl}}/workouts/6251a0ed1317e5dff269f8aa
+DELETE {{baseurl}}/products/6251a0ed1317e5dff269f8aa
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
+
 
 ### unknown end point
-GET {{baseurl}}/workoutsss/15
+GET {{baseurl}}/productssssss/15
 Content-Type: {{contentType}}
 
 ### PUT  Request
-PATCH {{baseurl}}/workouts/6379e2969df16cc3df69bccc
+PATCH {{baseurl}}/products/6379e2969df16cc3df69bccc
 Content-Type: {{contentType}}
-Authorization: bearer {{token}}
+
 
 {
     "reps":579,

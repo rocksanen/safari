@@ -34,6 +34,7 @@ function ProductView({products}) {
 
     
 
+
   return (
 
     <section className='mainstuff' id='mainstuff' >

@@ -1,12 +1,9 @@
 
 import './styles/background.css';
-import Background from './components/background'
-import {useState,useEffect,useRef} from 'react'
+import Background from './components/background';
+import {useState,useEffect,useRef} from 'react';
 import products from "./mockdata/products.json";
 import ProductView from './components/productView';
-
-
-
 
 function App() {
 
@@ -38,6 +35,8 @@ function App() {
           background.style.opacity = backgroundposition
         }
   }
+
+  
 
   return(
 

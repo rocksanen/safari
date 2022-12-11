@@ -1,23 +1,24 @@
 import { useState } from 'react'
 import { useAuthContext } from './useAuthContext'
 
-const API_URL=process.env.REACT_APP_API_URL;
+const API_URL="http://localhost:4000";
 
 export const useSignup = () => {
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(null)
   const { dispatch } = useAuthContext()
 
-  const signup = async (email, password) => {
+  const signup = async (email, password, name) => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch(API_URL + '/user/signup', {
+    const response = await fetch(API_URL + '/api/user/signup', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password, name })
     })
     const json = await response.json()
+
 
     if (!response.ok) {
       setIsLoading(false)

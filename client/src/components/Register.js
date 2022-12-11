@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSignup } from "../hooks/useSignup";
 
 
 const Register = (props) => {
@@ -7,10 +9,12 @@ const Register = (props) => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
 
+    const {signup, error, isLoading} = useSignup()
+
     // --> Tänne koodi mikä hoitaa rekisteritymisen
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email);
+        await signup(email,pass,name)
     }
 
     return (
@@ -23,9 +27,11 @@ const Register = (props) => {
             <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
             <label htmlFor="password">password</label>
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-            <button id = "register" type="submit">Register</button>
+            <button id = "register" type="submit" disabled={isLoading}>Register</button>
+            {error && <div className="error">{error}</div>}
         </form>
-        <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+        <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login <Link to="/login">here.</Link></button>
+        
     </div>
     )
 }

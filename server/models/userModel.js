@@ -1,23 +1,6 @@
-
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
-
-/*
-
-const url = 'mongodb+srv://xxxxxx:xxxxxx@cluster0.ooronxc.mongodb.net/users?retryWrites=true&w=majority'
-console.log(url);
-console.log('connecting to', url)
- 
-
-mongoose.connect(url)
-  .then(result => {
-      console.log('connected to MongoDB')
-  })
-  .catch((error) => {
-      console.log('error connecting to MongoDB:', error.message)
-  })
-  */
 
 const Schema = mongoose.Schema
 
@@ -34,7 +17,19 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  orders:[
+    {
+     name:{
+      type:String,
+     required:true 
+     },
+     price:{
+      type:Number,
+      required:true
+     }
+    }
+  ]
 })
 
 // static signup method

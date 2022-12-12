@@ -92,6 +92,10 @@
     margin-top: 2%;
     max-height: 53%;
   }
+
+  .logintext {
+    padding-right: 17px;
+  }
   
   .login-side-panel-toggle {
     border-right-width: 0;

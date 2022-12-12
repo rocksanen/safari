@@ -19,13 +19,13 @@ main {
   linear-gradient(
     200deg, 
     hsla(187, 100%, 69%, 1),
-    hsla(187, 100%, 69%, 0.13) 70%), 
+    hsla(187, 100%, 69%, 0.175) 70%), 
     linear-gradient(130deg, 
     rgba(255, 97, 255, 0.856), 
     hsla(300, 100%, 69%, 0.11) 70%), 
     linear-gradient(330deg, 
     hsla(0, 100%, 69%, 1), 
-    hsla(0, 100%, 69%, 0.423) 70%);
+    hsla(0, 100%, 69%, 0.49) 90%);
 
   height: 100vh;
   width: 100vw;
@@ -40,7 +40,7 @@ main {
     overflow-x: hidden;
     perspective: 10px;
     scroll-behavior: smooth;
-    z-index: 5;
+    z-index: 0;
     
   }
   
@@ -52,22 +52,15 @@ main {
     align-items: center;
     height: 120%;
     transform-style: preserve-3d;
-    z-index: 4;
+    z-index: -1;
     opacity: 1;
+    margin-left: 0%;
+    margin-right: 0%;
 
   }
 
   .stars {
 
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin-top: 0%;
-    object-fit: cover;
-
-  }
-
-  #rotator{
     transform-style: preserve-3d;
     transform: translateZ(-20px) scale(3);
     position: fixed;
@@ -83,6 +76,7 @@ main {
 
   .trees {
 
+    display: flex;
     transform: translateZ(-5px) scale(1.4);
     position: absolute;
     height: 120%;
@@ -90,6 +84,7 @@ main {
     margin-left: 0%;
     margin-right: 0%;
     object-fit:cover;
+    z-index:-2;
    
   }
 
@@ -97,12 +92,12 @@ main {
 
     transform: translateZ(-10px) scale(2.3);
     position: absolute;
-    height: 100%;
+    height: 120%;
     width: 100%;
     margin-top:3.5%;
     margin-left: 16%;
     object-fit: cover;
-    z-index: 2;
+    z-index: -3;
     
   }
 
@@ -110,12 +105,12 @@ main {
 
     transform: translateZ(-10px) scale(2.3);
     position: absolute;
-    height: 100%;
+    height: 120%;
     width: 100%;
     margin-top:3.5%;
     margin-left: 16%;
     object-fit: cover;
-    z-index: 2;
+    z-index: -3;
     opacity: 0;
     filter:saturate(500)
 
@@ -140,8 +135,10 @@ main {
 
 
   @keyframes spingear {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(20deg);}
+    0% {z-index: -4;transform: rotate(0deg);
+      }
+    100% {z-index: -4;transform: rotate(20deg);
+      }
   }
 
   @keyframes opacity {

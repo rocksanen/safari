@@ -1,5 +1,4 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
 import './styles/background.css';
 import {useState,useEffect,useRef} from 'react'
 
@@ -11,7 +10,7 @@ import Login from './components/login';
 
 
 
-const API_URL='http://localhost:4000';
+const API_URL=process.env.REACT_APP_API_URL
 
 function App() {
 
@@ -26,7 +25,7 @@ function App() {
     fetchProduct()
 
     //fetchUser is for test purposes only!!!
-    //fetchUser()
+   // fetchUser()
 
     setMainStuff(document.getElementById('mainstuff'))
     setSunset(document.getElementById('sunset'))
@@ -36,19 +35,28 @@ function App() {
 
 
   const fetchProduct = async () => {
-
-    const response = await fetch(API_URL + '/api/products/')
-    const json = await response.json()
-
-    response.ok ? setProducts(json) : setProducts([])
-
+    try {
+      // Make the API request.
+      const response = await fetch(API_URL + '/products/');
+      // Get the JSON data from the response.
+      const json = await response.json();
+  
+      // If the response was successful, set the products state to the JSON data.
+      // Otherwise, set the products state to an empty array.
+      response.ok ? setProducts(json) : setProducts([]);
+    } catch (error) {
+      // If an error occurred, log the error message to the console.
+      console.error(error.message);
+      // Set the products state to an empty array.
+      setProducts([]);
+    }
   }
 
   // for test purposes only
   const fetchUser = async () => {
 
 
-    const response = await fetch(API_URL + '/api/user/')
+    const response = await fetch(API_URL + '/user/')
     const json = await response.json()
 
     console.log(json);
@@ -56,11 +64,17 @@ function App() {
   }
   const handleScroll = (e) => {
 
+    // Get the scroll position of the target element.
     const target = e.currentTarget.scrollTop;
       
-      if (target !== positionRef.current) {
+      // Check if the scroll position has changed and the mainstuff, sunset, and
+      // background elements are not null.
+      if (target !== positionRef.current && mainstuff && sunset && background) {
 
+          // Update the current scroll position.
           positionRef.current = target;
+
+          // Calculate the opacity values for each element based on the scroll position.
           const mainposition = positionRef.current/600
           const sunposition = positionRef.current/1000
           const backgroundposition = 1 - positionRef.current/900

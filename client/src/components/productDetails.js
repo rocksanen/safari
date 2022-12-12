@@ -1,9 +1,6 @@
-import Cart from "./Cart"
+import Cart from "./Cart";
 
-
-
-const ProductDetails = ({ product, visible, setCart, cartItems  }) => {
-
+const ProductDetails = ({ product, visible, setCart, cartItems }) => {
   if (!visible) return null;
 
   return (
@@ -19,67 +16,83 @@ const ProductDetails = ({ product, visible, setCart, cartItems  }) => {
         <>
           <p className="product-info">{product.name}</p>
           <p>{product.description}</p>
-            <p className="product-price">{product.price}€</p>
-              <p>Tiedot</p>
-              <ul>
-                {product.details.map((item, index) => 
-                  <li className="product-details-list-item" key={index}>
-                    {item.label}<br />
-                    <span className="product-info">{item.value}</span>
-                  </li>)}
-                  <p><strong>Varastossa: {product.stock} kpl</strong></p>
-              </ul>
-          </>
+          <p className="product-price">{product.price}€</p>
+          <p>Tiedot</p>
+          <ul>
+            {product.details.map((item, index) => (
+              <li className="product-details-list-item" key={index}>
+                {item.label}
+                <br />
+                <span className="product-info">{item.value}</span>
+              </li>
+            ))}
+            <p>
+              <strong>Varastossa: {product.stock} kpl</strong>
+            </p>
+          </ul>
+        </>
       )}
-                  <CartComponent item = {product} setCart = {() => setCart} cartItems = {cartItems}/>
-
+      <CartComponent
+        item={product}
+        setCart={() => setCart}
+        cartItems={cartItems}
+      />
     </div>
-
-  )
-
+  );
+};
 const CartComponent = (props) => {
   return (
     <div className="add-to-cart-complex">
-      <input type="number" id="quantity" className="qty-box" min={1} max={props.item.stock} placeholder={1}></input>
-      <button className="add-to-cart-button" onClick={ () => props.setCart(addItem(props.item, props.cartItems)) }>Add to cart</button>
+      <input
+        type="number"
+        id="quantity"
+        className="qty-box"
+        min={1}
+        max={props.item.stock}
+        placeholder={1}
+      ></input>
+      <button
+        className="add-to-cart-button"
+        onClick={() => props.setCart(addItem(props.item, props.cartItems))}
+      >
+        Add to cart
+      </button>
       <b id="total"></b>
     </div>
-  )
-}
+  );
 
-function addItem(item, cartItems) {
+  function addItem(item, cartItems) {
+    let already = false;
+    let amount = document.querySelector("#quantity").value;
 
-  let already = false;
-  let amount = document.querySelector("#quantity").value;
+    if (!amount) amount = 1;
+    console.log("Määrä: " + amount);
+    console.log(cartItems);
+    for (var existing in cartItems) {
+      /* THIS SHIT DONT WORK */
 
-  if (!amount) amount = 1;
-  console.log("Määrä: " + amount);
-  console.log(cartItems);
-  for (var existing in cartItems) {
+      console.log(existing);
+      console.log(
+        "new item name: " + item.name + "\nexisting name: " + existing.name
+      );
 
-    /* THIS SHIT DONT WORK */
-
-    console.log(existing);
-    console.log("new item name: " + item.name + "\nexisting name: " + existing.name);
-
-    if (item.name == existing.name) {
-      existing.qty += amount;
-      already = true;
+      if (item.name == existing.name) {
+        existing.qty += amount;
+        already = true;
+      }
     }
-  }
-   
-  /* THIS SHIT DO WORK */
-  if (!already) {
-    cartItems.push({
-      name: item.name,
-      id: item.id,
-      qty: amount
-    })
-  }
 
-  return cartItems;
+    /* THIS SHIT DO WORK */
+    if (!already) {
+      cartItems.push({
+        name: item.name,
+        id: item.id,
+        qty: amount,
+      });
+    }
 
-}
-}
+    return cartItems;
+  }
+};
 
 export default ProductDetails;

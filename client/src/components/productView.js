@@ -64,7 +64,7 @@ function ProductView({products}) {
                 <img className="log-out-button" src={logoutbutton} onClick={handleSubmit} id="logout" />
                 <div id='user-active'>{user.name}</div>
             </div>)}
-        </div>
+          </div>
         <ProductMain
           products = {ItemAfterFilter}  setSideOpen = {setSideOpen} 
           sideOpen = {sideOpen} setSelectedProduct = {setSelectedProduct}/>

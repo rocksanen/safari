@@ -71,3 +71,19 @@
 	color: white;
 	text-decoration: underline;
   }
+
+  #active-profile {
+	  display: flex;
+	  flex-direction: row;
+  }
+
+  #user-active {
+	  padding-left: 10px;
+	  padding-right: 10px;
+	  font-weight: bold;
+  }
+
+  #logout {
+	  max-width: 100px;
+	  max-height: 25px;
+  }

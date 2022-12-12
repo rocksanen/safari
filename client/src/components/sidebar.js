@@ -2,7 +2,7 @@
 import '../styles/productView.css';
 import ProductDetails from './productDetails';
 
-const Sidebar = ({product, setSideOpen, sideOpen, logged}) => {
+const Sidebar = ({product, setSideOpen, sideOpen, setCart, cartItems}) => {
 
     return(
 
@@ -13,7 +13,7 @@ const Sidebar = ({product, setSideOpen, sideOpen, logged}) => {
                     {sideOpen ? '>' : '< Tuotteet'}
                 </div>
             </div>
-            <ProductDetails visible={sideOpen} product = {product} />
+            <ProductDetails visible={sideOpen} product = {product} setCart= {setCart} cartItems = {cartItems}/>
         </div>
     )
 }

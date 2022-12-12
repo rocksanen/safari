@@ -63,31 +63,32 @@ const CartComponent = (props) => {
 
   function addItem(item, cartItems) {
     let already = false;
-    let amount = document.querySelector("#quantity").value;
+    let amount = parseInt(document.querySelector("#quantity").value);
+
+    console.log(cartItems);
 
     if (!amount) amount = 1;
     console.log("Määrä: " + amount);
     console.log(cartItems);
-    for (var existing in cartItems) {
+
+    cartItems.map((existing) => {
       /* THIS SHIT DONT WORK */
 
       console.log(existing);
-      console.log(
-        "new item name: " + item.name + "\nexisting name: " + existing.name
-      );
 
       if (item.name == existing.name) {
-        existing.qty += amount;
+        existing.qty = parseInt(existing.qty) + amount;
         already = true;
       }
-    }
+      return console.log("existing: " + existing.name);
+    })
 
     /* THIS SHIT DO WORK */
     if (!already) {
       cartItems.push({
-        name: item.name,
         id: item.id,
-        qty: amount,
+        name: item.name,
+        qty: amount
       });
     }
 

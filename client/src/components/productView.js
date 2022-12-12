@@ -6,6 +6,9 @@ import LoginBar from "./loginbar";
 import Filter from "./filter/Filter";
 import Cart from "./Cart";
 import Form from "./form/Form";
+import {useAuthContext} from "../hooks/useAuthContext";
+import {useLogout} from "../hooks/useLogout";
+import Profile from "./profile";
 
 function ProductView({products}) {
     const {user} = useAuthContext();
@@ -62,10 +65,9 @@ function ProductView({products}) {
                 <Sidebar product = {selectedProduct} setSideOpen = {setSideOpen} sideOpen = {sideOpen} setCart = {setCart} cartItems={cart}/>
                 <LoginBar setSideOpen = {setLogSideOpen} sideOpen = {logSideOpen}/>
             </div>
-        </div>
         <Form />
       </div>
     </section>
-  );
+  )
 }
 export default ProductView;

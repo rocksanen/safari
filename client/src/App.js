@@ -81,10 +81,10 @@ function App() {
       <div className="wrapper" onScroll={handleScroll}>
         <BrowserRouter>
           <Background />
-          <Nav />
           <ProductView products={products} />
         </BrowserRouter>
       </div>
+      <Nav />
     </main>
   );
 }

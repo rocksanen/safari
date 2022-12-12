@@ -93,16 +93,6 @@ function App() {
         <BrowserRouter>
         <Background/>
         <ProductView products={products}/>
-        <Routes>
-          <Route
-          path='/login'
-          element={<Login/>}
-          />
-          <Route
-          path='/signup'
-          element={<Register/>}
-          />
-        </Routes>
         </BrowserRouter>
       </div>
     </main>

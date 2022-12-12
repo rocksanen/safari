@@ -1,7 +1,10 @@
 import SignInUp from "./SignInUp"
+import { Link } from "react-router-dom"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 const LoginBar = ({setSideOpen, sideOpen}) => {
 
+    const {user} = useAuthContext();
 
     return(
 
@@ -9,10 +12,10 @@ const LoginBar = ({setSideOpen, sideOpen}) => {
             <div className="login-side-panel-toggle-wrapper">
                 <div className="login-side-panel-toggle"
                     onClick={() => setSideOpen(!sideOpen)}>
-                    {sideOpen ? '>' : '< Login'}
+                    {!user ? <p className="logintext">{sideOpen ? '> Login' : '< Login' }<Link to="/login"></Link></p> : 'logged in' }
                 </div>
             </div>
-            <SignInUp visible={sideOpen}/>
+            {!user && <SignInUp visible={sideOpen}/>}
         </div>
     )
 

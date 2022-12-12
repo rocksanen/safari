@@ -5,8 +5,16 @@ import ProductMain from "./productMainArea";
 import LoginBar from './loginbar';
 import Filter from './filter/Filter';
 import Cart from './Cart';
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from '../hooks/useAuthContext';
+import Profile from './profile';
 
 function ProductView({products}) {
+
+  const {user} = useAuthContext();
+  const {logout} = useLogout();
+  
+   
     const [sideOpen, setSideOpen] = useState(false);
     const [logSideOpen,setLogSideOpen] = useState(false)
     const [selectedProduct, setSelectedProduct] = useState('')
@@ -17,6 +25,10 @@ function ProductView({products}) {
     }
     const [cart, setCart] = useState([])
     const [cartOpen, setCartOpen] = useState(false)
+
+    const handleSubmit = () => {
+      logout();
+  }
 
     /* placeholder */ 
     const cartExamp = 
@@ -45,6 +57,12 @@ function ProductView({products}) {
             <div className="filter-cart">
             <Filter value={filter} onChange={handleFilter} />
             <Cart cartItems={ cart } setCart = { setCart } cartOpen = { cartOpen } setCartOpen = { setCartOpen}/>
+            {user && (
+            <div id='active-profile'>
+                <Profile user={user}/>
+                <div id='user-active'>{user.name}</div>
+                <button onClick={handleSubmit} id="logout">Log out</button>
+            </div>)}
         </div>
         <ProductMain
           products = {ItemAfterFilter}  setSideOpen = {setSideOpen} 

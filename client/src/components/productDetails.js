@@ -1,20 +1,23 @@
 import Cart from "./Cart"
 
-const ProductDetails = ({product, visible, setCart, cartItems }) => {
 
-    if (!visible) return null
 
-    if (!product) return (
-      <div className="product-details">
-        <p className="product-info">Tuotteemme</p>
-        <p>Tervetuloa meidän mahtavaan eräkauppaamme.</p>
-        <p> Valitse tuotteita, katso tiedot ja laita kortti vinkumaan!</p>
-      </div>
-    )
+const ProductDetails = ({ product, visible, setCart, cartItems  }) => {
 
-    return (
-      <div className="product-details">
-        <p className="product-info">{product.name}</p>
+  if (!visible) return null;
+
+  return (
+    <div className="product-details">
+      {!product && (
+        <>
+          <p className="product-info">Tuotteemme</p>
+          <p>Tervetuloa meidän mahtavaan eräkauppaamme.</p>
+          <p>Valitse tuotteita, katso tiedot ja laita kortti vinkumaan!</p>
+        </>
+      )}
+      {product && (
+        <>
+          <p className="product-info">{product.name}</p>
           <p>{product.description}</p>
             <p className="product-price">{product.price}€</p>
               <p>Tiedot</p>
@@ -26,10 +29,13 @@ const ProductDetails = ({product, visible, setCart, cartItems }) => {
                   </li>)}
                   <p><strong>Varastossa: {product.stock} kpl</strong></p>
               </ul>
-            <CartComponent item = {product} setCart = {() => setCart} cartItems = {cartItems}/>
-      </div>
-    )
-}
+          </>
+      )}
+                  <CartComponent item = {product} setCart = {() => setCart} cartItems = {cartItems}/>
+
+    </div>
+
+  )
 
 const CartComponent = (props) => {
   return (
@@ -74,6 +80,6 @@ function addItem(item, cartItems) {
   return cartItems;
 
 }
+}
 
-
-export default ProductDetails
+export default ProductDetails;

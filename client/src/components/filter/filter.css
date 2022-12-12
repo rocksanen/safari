@@ -1,10 +1,10 @@
 .filter {
-    width: 50%;
-    margin: auto;
+  width: 50%;
 }
 
 .searchTerm {
-    width: 100%;
+    width: 80%;
+    float:left;
     border: 3px solid #00B4CC;
     padding: 5px;
     height: 20px;

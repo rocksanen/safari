@@ -237,8 +237,8 @@ li.product-details-list-item {
 }
 
 .cart-button {
-  height: 3em;
-  width: 3em;
+  height: 2em;
+  width: 2em;
   border-radius: 0;
 }
 .cart-button:hover {
@@ -274,9 +274,31 @@ li.product-details-list-item {
   box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
 }
 
-/* cart and filter */
+/* top bar */
 .filter-cart {
   display: flex;
   flex-direction: row;
   padding-top: 20px;
+}
+
+#active-profile * {
+margin-left: 1em;
+}
+
+.profile-button {
+  max-width: 2em;
+  max-height: 2em;
+}
+
+.profile-button:hover {
+  cursor: pointer;
+}
+
+.log-out-button {
+  max-width: 2em;
+  max-height: 2em;
+}
+
+.log-out-button:hover {
+  cursor: url('https://cdn.discordapp.com/attachments/940941259571355688/1051889021921546271/6ctiny.png'), pointer;
 }

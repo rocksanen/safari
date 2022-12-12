@@ -8,6 +8,7 @@ import Cart from './Cart';
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from '../hooks/useAuthContext';
 import Profile from './profile';
+import logoutbutton from '../images/icons/logout.png'
 
 function ProductView({products}) {
 
@@ -60,8 +61,8 @@ function ProductView({products}) {
             {user && (
             <div id='active-profile'>
                 <Profile user={user}/>
+                <img className="log-out-button" src={logoutbutton} onClick={handleSubmit} id="logout" />
                 <div id='user-active'>{user.name}</div>
-                <button onClick={handleSubmit} id="logout">Log out</button>
             </div>)}
         </div>
         <ProductMain

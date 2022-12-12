@@ -4,12 +4,7 @@ import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import Profile from "./profile";
 
-const ProductMain = ({
-  setSideOpen,
-  setSelectedProduct,
-  sideOpen,
-  products,
-}) => {
+const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products}) => {
   const { user } = useAuthContext();
   const { logout } = useLogout();
 

@@ -9,6 +9,7 @@ import Register from "./components/Register";
 import Login from "./components/login";
 import Nav from "./components/nav/nav";
 
+
 const API_URL = "http://localhost:4000/api";
 
 function App() {
@@ -32,15 +33,17 @@ function App() {
   const fetchProduct = async () => {
     try {
       // Make the API request.
+      console.log("getting json");
       const response = await fetch(API_URL + "/products/");
+      console.log("response received");
       // Get the JSON data from the response.
       const json = await response.json();
-
       // If the response was successful, set the products state to the JSON data.
       // Otherwise, set the products state to an empty array.
       response.ok ? setProducts(json) : setProducts([]);
     } catch (error) {
       // If an error occurred, log the error message to the console.
+
       console.error(error.message);
       // Set the products state to an empty array.
       setProducts([]);
@@ -51,7 +54,6 @@ function App() {
   const fetchUser = async () => {
     const response = await fetch(API_URL + "/user/");
     const json = await response.json();
-
     console.log(json);
   };
   const handleScroll = (e) => {
@@ -81,10 +83,6 @@ function App() {
           <Background />
           <Nav />
           <ProductView products={products} />
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Register />} />
-          </Routes>
         </BrowserRouter>
       </div>
     </main>

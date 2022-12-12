@@ -18,10 +18,10 @@ const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products}) => {
         <h1>Meidän tavaramme</h1>
 
         {user && (
-            <div>
+            <div id='active-profile'>
                 <Profile user={user}/>
-                <span><b>{user.name}</b> : {user.email}</span>
-                <button onClick={handleSubmit} id="login">Log out</button>
+                <div id='user-active'>{user.name}</div>
+                <button onClick={handleSubmit} id="logout">Log out</button>
             </div>)}
         <div className="product-list">
             {products.map(item =>

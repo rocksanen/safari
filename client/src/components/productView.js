@@ -34,10 +34,12 @@ function ProductView({products}) {
     const cartExamp = 
     [
       {
+        id: 1,
         name: "kakkaa",
         qty: 3
       },
       {
+        id: 2,
         name: "ASDASDA",
         qty: 1
       }
@@ -48,7 +50,6 @@ function ProductView({products}) {
   
     const ItemAfterFilter = filter === '' ? products : products.filter(item => 
       item.name.toLowerCase().includes(filter.toLowerCase()))    
-    console.log(ItemAfterFilter)  
   return (
 
     <section className='mainstuff' id='mainstuff' >
@@ -67,7 +68,7 @@ function ProductView({products}) {
           products = {ItemAfterFilter}  setSideOpen = {setSideOpen} 
           sideOpen = {sideOpen} setSelectedProduct = {setSelectedProduct}/>
             <div className='sidecontainer'>
-                <Sidebar product = {selectedProduct} setSideOpen = {setSideOpen} sideOpen = {sideOpen}/>
+                <Sidebar product = {selectedProduct} setSideOpen = {setSideOpen} sideOpen = {sideOpen} setCart = {setCart} cartItems={cart}/>
                 <LoginBar setSideOpen = {setLogSideOpen} sideOpen = {logSideOpen}/>
             </div>
         </div>

@@ -10,14 +10,11 @@ const Background = () =>
 
     <header id='parallerheader'> 
     <div id = 'background'></div>  
-    <div id='rotator'>
         <img src={stars} className="stars" id="stars" alt="stars"/>
-    </div>
         <img src={sun} className="sun" alt="sun"/>
         <img src={sunset} id="sunset" alt="sunset"/>
         <img src={trees} className="trees" alt="trees"/>
         <h1 className="title">Safari Wares</h1>
-    
     </header>
 
 export default Background

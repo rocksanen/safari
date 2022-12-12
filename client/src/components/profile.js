@@ -1,12 +1,8 @@
-
 import { useState } from "react";
-
-
 const Profile = ({user}) => {
   
     const [open, setOpen] =useState(false);
     let total = 0;
-
     const handleOpen = () => {
       setOpen(!open);
       //console.log(user.orders);
@@ -49,5 +45,4 @@ const Profile = ({user}) => {
       </div>
     );
 }
-
 export default Profile;

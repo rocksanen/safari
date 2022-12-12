@@ -30,10 +30,15 @@ const CartList = (props) => {
         );
       })}
     </ul>
-    <button id="buy-button" onClick={console.log(props.cartItems)}>OSTA KUSIPÄÄ</button>
+    <button id="buy-button" onClick={() => buy(props.cartItems)}>OSTA KUSIPÄÄ</button>
     </>
   );
 };
+
+function buy(items) {
+  /* OSTA */
+  console.log(items);
+}
 
 function removeItem(item, cartItems) {
 

@@ -177,12 +177,10 @@
 .product-list-item.selected {
   background-color: rgb(222, 199, 52);
 }
-
 .product-list-item-photo {
   width: 150px;
   height: 116px;
 }
-
 .product-details {
   padding: 10px;
   width: 280px;

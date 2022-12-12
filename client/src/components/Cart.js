@@ -30,7 +30,7 @@ const CartList = (props) => {
         );
       })}
     </ul>
-    <button id="buy-button" onClick={() => buy(props.cartItems)}>OSTA KUSIPÄÄ</button>
+    <button id="buy-button" onClick={() => buy(props.cartItems)}>OSTA KAIKKI</button>
     </>
   );
 };

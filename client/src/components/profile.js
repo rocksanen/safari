@@ -17,6 +17,9 @@ const Profile = ({user}) => {
       <div>
         <button onClick={handleOpen}>Profile</button>
         {open ? <div>
+            <h4>
+              Personal information:
+            </h4>
             <ul>
                 <li key={user._id}>
                     <b>Name:</b> {user.name}

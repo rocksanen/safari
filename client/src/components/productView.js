@@ -61,7 +61,7 @@ function ProductView({products}) {
             {user && (
             <div id='active-profile'>
                 <Profile user={user}/>
-                <img className="log-out-button" src={logoutbutton} onClick={handleSubmit} id="logout" />
+                <img className="log-out-button" src={logoutbutton} alt="log-out" onClick={handleSubmit} id="logout" />
                 <div id='user-active'>{user.name}</div>
             </div>)}
           </div>

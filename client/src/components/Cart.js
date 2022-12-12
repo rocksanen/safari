@@ -1,4 +1,5 @@
 import icon from '../images/icons/cart-icon.png'
+
 const Cart = ({ cartItems, setCart, cartOpen, setCartOpen }) => {
   if (cartOpen) {
     return (
@@ -19,14 +20,17 @@ const Cart = ({ cartItems, setCart, cartOpen, setCartOpen }) => {
 };
 
 const CartList = (props) => {
+
   return (
     <>
     <ul className="Cart-box">
       {props.cartItems.map((item) => {
         return (
+
           <li key={item.id}>
             {item.name} - {item.qty} <button onClick={() => props.setCart(removeItem(item, props.cartItems))}>Remove</button>
           </li>
+
         );
       })}
     </ul>
@@ -43,13 +47,15 @@ function buy(items) {
 function removeItem(item, cartItems) {
 
   /*HELP: removing works, HOWEVER: 
-  1. clicking a button removes everything below it too
   2. clicking a button wont update on click, only after updates after closing and opening the cart 
   */
+
+
   let removeThis = cartItems.indexOf(item)
 
-  return cartItems.splice(removeThis)
-  
+  if (removeThis > -1) {
+    return cartItems.splice(removeThis, 1)
+  }
 }
 
 export default Cart;

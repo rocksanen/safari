@@ -7,6 +7,8 @@ import Background from "./components/background";
 import ProductView from "./components/productView";
 import Register from "./components/Register";
 import Login from "./components/login";
+import Nav from "./components/nav/nav";
+
 
 const API_URL = "http://localhost:4000/api";
 
@@ -34,7 +36,6 @@ function App() {
       console.log("getting json");
       const response = await fetch(API_URL + "/products/");
       console.log("response received");
-      console.log(response);
       // Get the JSON data from the response.
       const json = await response.json();
       // If the response was successful, set the products state to the JSON data.
@@ -80,6 +81,7 @@ function App() {
       <div className="wrapper" onScroll={handleScroll}>
         <BrowserRouter>
           <Background />
+          <Nav />
           <ProductView products={products} />
         </BrowserRouter>
       </div>

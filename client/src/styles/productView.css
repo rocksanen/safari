@@ -161,6 +161,7 @@
 .product-list {
   display: flex;
   justify-content:flex-start;
+  align-content: flex-start;
   flex-flow: row wrap;
   padding: 0;
   background-color: rgba(209, 173, 66, 0);
@@ -174,9 +175,7 @@
   border: solid black 2px;
   background-color: blanchedalmond;
   border-radius: 1rem;
-  margin: 10px;
-  max-width: 20%;
-  max-height: 20%;
+  margin: 0.5em;
   min-width: 150px;
   min-height: 150px;
   overflow: hidden;

@@ -1,0 +1,94 @@
+.container.contact__container{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 20%;
+}
+
+h1{
+    margin-left: 35px;
+}
+
+.contact__options{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-left: auto;
+ 
+}
+
+.contact__option{
+    background:#f29109b3;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    transition: all 400ms ease;
+    border: 1px solid transparent;
+
+}
+
+.contact__option:hover {
+    background: transparent;
+    border-color: black;
+}
+
+.icon{
+    font-size: 1.5rem;
+    
+}
+.contact__option a{
+    margin-top: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+
+/* ============= FORM ============== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid black;
+    resize: none;
+    color: white;
+}
+.btn{
+    width: max-content;
+    display: inline-block;
+    color: black;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-bottom: 1.5rem;
+}
+
+/* ============= MEDIA QURIES (MEDIUM DEVICE) ================== */
+@media screen and (max-width:1042px) {
+        .container.contact__container {
+            grid-template-columns: 2fr;
+            gap: 2rem;
+
+        }
+    
+}
+
+
+
+
+/* ============= MEDIA QURIES (SMALL DEVICE) ================== */
+@media screen and (max-width:600px) {
+    .container.contact__container {
+        width: 90%;
+
+    }
+
+    
+}

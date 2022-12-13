@@ -13,7 +13,10 @@ const Sidebar = ({product, setSideOpen, sideOpen, setCart, cartItems}) => {
                     {sideOpen ? '>' : '< Tuotteet'}
                 </div>
             </div>
-            <ProductDetails visible={sideOpen} product = {product} setCart= {setCart} cartItems = {cartItems}/>
+            <ProductDetails 
+            visible={sideOpen} product = {product} 
+            setCart = {setCart} cartItems = {cartItems}
+            sideOpen = {sideOpen} setSideOpen = {setSideOpen}/>
         </div>
     )
 }

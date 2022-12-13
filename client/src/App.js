@@ -1,12 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import "./styles/background.css";
 import { useState, useEffect, useRef } from "react";
 
 //components
 import Background from "./components/background";
 import ProductView from "./components/productView";
-import Register from "./components/Register";
-import Login from "./components/login";
+import Nav from "./components/nav/nav";
+
 
 const API_URL = "http://localhost:4000/api";
 
@@ -18,23 +18,20 @@ function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+
     fetchProduct();
-
-    //fetchUser is for test purposes only!!!
-    // fetchUser()
-
     setMainStuff(document.getElementById("mainstuff"));
     setSunset(document.getElementById("sunset"));
     setBackground(document.getElementById("background"));
+
   }, []);
 
   const fetchProduct = async () => {
     try {
       // Make the API request.
-      console.log("getting json");
+      //console.log("getting json");
       const response = await fetch(API_URL + "/products/");
-      console.log("response received");
-      console.log(response);
+      //console.log("response received");
       // Get the JSON data from the response.
       const json = await response.json();
       // If the response was successful, set the products state to the JSON data.
@@ -49,12 +46,6 @@ function App() {
     }
   };
 
-  // for test purposes only
-  const fetchUser = async () => {
-    const response = await fetch(API_URL + "/user/");
-    const json = await response.json();
-    console.log(json);
-  };
   const handleScroll = (e) => {
     // Get the scroll position of the target element.
     const target = e.currentTarget.scrollTop;
@@ -83,6 +74,7 @@ function App() {
           <ProductView products={products} />
         </BrowserRouter>
       </div>
+      <Nav />
     </main>
   );
 }

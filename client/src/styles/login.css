@@ -12,26 +12,21 @@
 }
 
   .login-form{
-
 	display: flex;
 	flex-direction: column;
 	text-align: center;
   	align-items: center;
   	justify-content: center;
   	color: white;
-
-
   }
 
   .register-form {
-
 	display: flex;
 	flex-direction: column;
 	text-align: center;
   	align-items: center;
   	justify-content: center;
   	color: white;
-
   }
   
   @media screen and (min-width: 600px) {
@@ -78,6 +73,9 @@
   #active-profile {
 	  display: flex;
 	  flex-direction: row;
+	  float: right;
+	  margin-right: 40px;
+	  min-width: 200px;
   }
 
   #user-active {

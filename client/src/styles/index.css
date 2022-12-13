@@ -7,9 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.button {
-  color: white;
-  background-color: #e7195a;
+button {
+  width: max-content;
+  display: inline-block;
+  color: #40adbb;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 0px;
+  margin-bottom: 1.5rem;
+  background: rgba(0, 0, 0 , 0.3);
+  transition: all 400ms ease;
+}
+
+button:hover{
+  color: #9e42f5;
+  background: rgba(0, 0, 0, 0.39);
 }
 
 code {

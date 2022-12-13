@@ -1,4 +1,5 @@
 import { useState } from "react";
+import profile from "../images/icons/profile.png"
 const Profile = ({user}) => {
   
     const [open, setOpen] =useState(false);
@@ -10,8 +11,8 @@ const Profile = ({user}) => {
   
     return (
         
-      <div>
-        <button onClick={handleOpen}>Profile</button>
+      <>
+        <img className="profile-button" src={profile} alt="profile-icon" onClick={handleOpen} />
         {open ? <div>
             <h4>
               Personal information:
@@ -42,7 +43,7 @@ const Profile = ({user}) => {
               Total: {total} €
             </h4>
         </div> : <div></div>}
-      </div>
+      </>
     );
 }
 export default Profile;

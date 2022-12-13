@@ -9,6 +9,7 @@ import Form from "./form/Form";
 import {useAuthContext} from "../hooks/useAuthContext";
 import {useLogout} from "../hooks/useLogout";
 import Profile from "./profile";
+import logoutbutton from '../images/icons/logout.png'
 
 function ProductView({products}) {
     const {user} = useAuthContext();
@@ -55,10 +56,10 @@ function ProductView({products}) {
             {user && (
             <div id='active-profile'>
                 <Profile user={user}/>
+                <img className="log-out-button" src={logoutbutton} alt="log-out" onClick={handleSubmit} id="logout" />
                 <div id='user-active'>{user.name}</div>
-                <button onClick={handleSubmit} id="logout">Log out</button>
             </div>)}
-        </div>
+          </div>
         <ProductMain
           products = {ItemAfterFilter}  setSideOpen = {setSideOpen} 
           sideOpen = {sideOpen} setSelectedProduct = {setSelectedProduct}/>

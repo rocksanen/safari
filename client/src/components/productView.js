@@ -10,6 +10,7 @@ import {useAuthContext} from "../hooks/useAuthContext";
 import {useLogout} from "../hooks/useLogout";
 import Profile from "./profile";
 import logoutbutton from '../images/icons/logout.png'
+import { useEffect } from "react";
 
 function ProductView({products}) {
     const {user} = useAuthContext();
@@ -20,6 +21,7 @@ function ProductView({products}) {
     const [filter, setFilter] = useState('')
     const [cart, setCart] = useState([])
     const [cartOpen, setCartOpen] = useState(false)
+    const [count, setCount] = useState('')
 
     const handleFilter = (event) => setFilter(event.target.value)
     const handleSubmit = () => logout();
@@ -27,25 +29,11 @@ function ProductView({products}) {
     const ItemAfterFilter = filter === '' ? products : products.filter(item => 
     item.name.toLowerCase().includes(filter.toLowerCase()))   
   
-    /* placeholder 
-    const cartExamp = 
-    [
-      {
-        id: 1,
-        name: "retkituote 1",
-        qty: 3
-      },
-      {
-        id: 2,
-        name: "retkituote 2",
-        qty: 1
-      }
-    ]
-    useEffect(() => {
-      setCart(cartExamp)
-    },[]);
+   useEffect(() => {
 
-    */ 
+   },[count])
+    
+
  
   return (
     <section className='mainstuff' id='mainstuff' >
@@ -64,7 +52,13 @@ function ProductView({products}) {
           products = {ItemAfterFilter}  setSideOpen = {setSideOpen} 
           sideOpen = {sideOpen} setSelectedProduct = {setSelectedProduct}/>
             <div className='sidecontainer'>
-                <Sidebar product = {selectedProduct} setSideOpen = {setSideOpen} sideOpen = {sideOpen} setCart = {setCart} cartItems={cart}/>
+                <Sidebar product = {selectedProduct} 
+                setSideOpen = {setSideOpen} 
+                sideOpen = {sideOpen} 
+                setCart = {setCart} 
+                cartItems={cart}
+                count = {count}
+                setCount = {setCount}/>
                 <LoginBar setSideOpen = {setLogSideOpen} sideOpen = {logSideOpen}/>
             </div>
         <Form />

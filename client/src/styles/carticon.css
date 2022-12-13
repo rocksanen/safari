@@ -3,7 +3,6 @@
   .shopping-cart{
     min-width:35px;
     min-height: 35px;
-    margin:auto;
     text-align:center;
   }
   
@@ -21,7 +20,7 @@
     padding:10px;
     z-index:0;
     text-align:center;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
   }
   
   .shopping-cart-icon{
@@ -29,7 +28,7 @@
     opacity:1;
     z-index: 2;
     color:grey;
-    position:relative;
+    position: relative;
   }
 
   .shopping-cart:hover {

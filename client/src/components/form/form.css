@@ -48,8 +48,10 @@ h1{
 }
 
 #contact {
-    max-width: 700px;
-    margin-left: 100px;
+    margin-left: 50px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -57,28 +59,35 @@ h1{
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    max-width: 300px;
+    gap: 1.0rem;
+    max-width: 400px;
 }
 
 input, textarea {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 0.5rem;
-    background: transparent;
-    border: 2px solid black;
+    background: rgba(0, 0, 0, 0.2);
+    border: 0px;
     resize: none;
     color: white;
 }
 .btn{
     width: max-content;
     display: inline-block;
-    color: black;
+    color: #40adbb;
     padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
     cursor: pointer;
-    border: 1px solid black;
+    border: 0px;
     margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0 , 0.3);
+    transition: all 400ms ease;
+}
+
+.btn:hover{
+    color: #9e42f5;
+    background: rgba(0, 0, 0, 0.39);
 }
 
 

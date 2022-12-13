@@ -1,14 +1,9 @@
 
 import '../styles/carticon.css';
 
-
-
 const CartIcon = ({setCartOpen,cartItems}) => {
-
-    let sum = 0
-    cartItems.forEach(element => {
-        sum += element.qty
-    })
+    
+    const sum = cartItems.reduce((total, item) => total + item.qty, 0);
 
     return(
     <>

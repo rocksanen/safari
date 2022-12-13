@@ -17,16 +17,16 @@ function ProductView({products}) {
     const [logSideOpen,setLogSideOpen] = useState(false)
     const [selectedProduct, setSelectedProduct] = useState('')
     const [filter, setFilter] = useState('')
-    const handleFilter = (event) => {
-      console.log(event.target.value)
-      setFilter(event.target.value)
-    }
     const [cart, setCart] = useState([])
     const [cartOpen, setCartOpen] = useState(false)
-    const handleSubmit = () => {
-      logout();
-  }
-    /* placeholder */ 
+
+    const handleFilter = (event) => setFilter(event.target.value)
+    const handleSubmit = () => logout();
+
+    const ItemAfterFilter = filter === '' ? products : products.filter(item => 
+    item.name.toLowerCase().includes(filter.toLowerCase()))   
+  
+    /* placeholder 
     const cartExamp = 
     [
       {
@@ -43,8 +43,9 @@ function ProductView({products}) {
     useEffect(() => {
       setCart(cartExamp)
     },[]);
-    const ItemAfterFilter = filter === '' ? products : products.filter(item => 
-      item.name.toLowerCase().includes(filter.toLowerCase()))    
+
+    */ 
+ 
   return (
     <section className='mainstuff' id='mainstuff' >
         <div className="product-view">

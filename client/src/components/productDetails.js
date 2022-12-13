@@ -1,6 +1,8 @@
 //import Cart from "./Cart";
 
-const ProductDetails = ({ product, visible, setCart, cartItems, sideOpen, setSideOpen }) => {
+import Cart from "./Cart";
+
+const ProductDetails = ({ product, visible, setCart, cartItems }) => {
   if (!visible) return null;
 
   return (
@@ -36,8 +38,6 @@ const ProductDetails = ({ product, visible, setCart, cartItems, sideOpen, setSid
         item={product}
         setCart={() => setCart}
         cartItems={cartItems}
-        sideOpen = {sideOpen}
-        setSideOpen = {setSideOpen}
       />
     </div>
   );
@@ -55,7 +55,7 @@ const CartComponent = (props) => {
       ></input>
       <button
         className="add-to-cart-button"
-        onClick={() => props.setCart(addItem(props.item, props.cartItemsn))}
+        onClick={() => props.setCart(addItem(props.item, props.cartItems))}
       >
         Add to cart
       </button>
@@ -65,31 +65,32 @@ const CartComponent = (props) => {
 
   function addItem(item, cartItems) {
     let already = false;
-    let amount = document.querySelector("#quantity").value;
+    let amount = parseInt(document.querySelector("#quantity").value);
+
+    console.log(cartItems);
 
     if (!amount) amount = 1;
     console.log("Määrä: " + amount);
     console.log(cartItems);
-    for (var existing in cartItems) {
+
+    cartItems.map((existing) => {
       /* THIS SHIT DONT WORK */
 
       console.log(existing);
-      console.log(
-        "new item name: " + item.name + "\nexisting name: " + existing.name
-      );
 
       if (item.name === existing.name) {
-        existing.qty += amount;
+        existing.qty = parseInt(existing.qty) + amount;
         already = true;
       }
-    }
+      return console.log("existing: " + existing.name);
+    })
 
     /* THIS SHIT DO WORK */
     if (!already) {
       cartItems.push({
-        name: item.name,
         id: item.id,
-        qty: amount,
+        name: item.name,
+        qty: amount
       });
     }
 

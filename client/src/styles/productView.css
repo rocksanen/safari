@@ -208,6 +208,10 @@
   opacity: 90%;
 }
 
+.product-list-item b {
+  padding-top: 3px;
+}
+
 .product-list-item:hover {
   box-shadow: -1px 3px 5px -1px rgba(0, 0, 0, 0.63);
   transition: all 700ms ease;

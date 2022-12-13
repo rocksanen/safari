@@ -3,27 +3,26 @@
 }
 
 .product-view {
-  width: 80%;
-  margin: auto;
   min-height: 104vh;
-  display: flex;
-  justify-content: stretch;
-  align-items: stretch;
-  flex-direction: column;
-}
-
-.mainstuff {
   background-image: linear-gradient(
       200deg,
-      hsla(187, 100%, 69%, 1),
-      hsla(187, 100%, 69%, 0.295) 70%
+      hsl(238, 42%, 15%),
+      hsla(276, 61%, 31%, 0.29) 70%
     ),
     linear-gradient(
       130deg,
       rgba(255, 97, 255, 0),
       hsla(300, 100%, 69%, 0.11) 70%
     ),
-    linear-gradient(330deg, rgba(255, 189, 97, 0.342), hsl(0, 100%, 69%) 70%);
+    linear-gradient(330deg, rgb(49, 18, 0), hsl(212, 45%, 69%) 70%);
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+  flex-direction: column;
+}
+
+.mainstuff {
   width: 100%;
   position: absolute;
   background-color: rgba(170, 224, 234, 0);
@@ -35,9 +34,15 @@
 }
 
 .product-main-area {
-  padding: 0;
+  padding: 10px;
   flex: 1 1 auto;
   z-index: 0;
+  max-width: 800px;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 60px;
 }
 
 .product-main-area * {
@@ -53,12 +58,17 @@
 
 .product-side-panel {
   border-left: solid black 0px;
-  background-color: lightcoral;
+  background-color: rgba(111, 107, 169, 0.97);
   flex: 0 0 fit-content;
   -webkit-box-shadow: -5px 1px 4px 1px rgba(0, 0, 0, 0.45);
   box-shadow: -5px 1px 4px 1px rgba(0, 0, 0, 0.45);
   margin-top: 5%;
   max-height: 53%;
+  transition: all 700ms ease;
+}
+
+.product-side-panel:hover {
+  opacity: 80%;
 }
 
 .product-side-panel-toggle {
@@ -67,16 +77,19 @@
   border-bottom-left-radius: 0.25rem;
   -webkit-box-shadow: -5px 1px 4px 1px rgba(0, 0, 0, 0.45);
   box-shadow: -5px 1px 4px 1px rgba(0, 0, 0, 0.45);
-  background-color: rgb(240, 128, 128);
+  background-color: rgba(111, 107, 169, 0.97);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100px;
   height: 45px;
+  cursor: pointer;
+  margin-top: 100px;
+  transition: all 700ms ease;
 }
 
 .product-side-panel-toggle:hover {
-  cursor: pointer;
+  opacity: 60%;
 }
 
 .product-side-panel-toggle-wrapper {
@@ -86,17 +99,24 @@
   top: 10px;
   width: 0;
   height: 0;
+  transition: all 700ms ease;
 }
 
   .login-side-panel {
     border-left: solid black 0px;
-    background-color: rgb(89, 73, 165);
+    background-color: rgba(89, 73, 165, 0.87);
     flex: 0 0 fit-content;
     -webkit-box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
     box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
     margin-top: 2%;
     max-height: 53%;
+    cursor: pointer;
+    transition: all 700ms ease;
   }
+
+.login-side-panel:hover {
+  opacity: 80%;
+}
 
   .logintext {
     padding-right: 17px;
@@ -108,20 +128,19 @@
     border-bottom-left-radius: 0.25rem;
     -webkit-box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
     box-shadow: -5px 1px 4px 1px rgba(0,0,0,0.45);
-    background-color: rgb(89, 73, 165);
+    background-color: rgba(89, 73, 165, 0.87);
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100px;
     height: 45px;
-    position: fixed;
-    margin-top: 3.5%;
+    margin-top: 60px;
+    transition: all 700ms ease;
   }
 
   .login-side-panel-toggle:hover {
-    cursor: pointer;
+    opacity: 60%;
   }
-  
   .login-side-panel-toggle-wrapper {
     overflow: visible;
     position: relative;
@@ -159,11 +178,7 @@
 /*----------------------------------------- Products---------------------------------------------- */
 
 .product-list {
-  display: flex;
-  justify-content:flex-start;
-  align-content: flex-start;
-  flex-flow: row wrap;
-  padding: 0;
+  padding: 25px;
   background-color: rgba(209, 173, 66, 0);
   border-radius: 1rem;
 }
@@ -172,19 +187,34 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  border: solid black 2px;
-  background-color: blanchedalmond;
+  border: 0px;
+  background-color: rgba(255, 255, 255, 0.91);
   border-radius: 1rem;
-  margin: 0.5em;
-  min-width: 150px;
-  min-height: 150px;
+  margin: 25px 10px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
+  transition: all 700ms ease;
+  font-family: Corbel, sans-serif;
+  color: #000000;
+}
+
+.product-list-item-photo:hover {
+  opacity: 85%;
+}
+
+.product-list-item-photo {
+  transition: all 700ms ease;
+  opacity: 90%;
 }
 
 .product-list-item:hover {
-  background-color: #26cc6e;
-  box-shadow: 3px -3px 2px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 3px 5px -1px rgba(0, 0, 0, 0.63);
+  transition: all 700ms ease;
   cursor: pointer;
+  width: 150px;
+  height: 155px;
+  object-fit: contain;
 }
 
 .product-list-item.selected {

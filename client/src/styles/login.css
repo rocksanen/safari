@@ -84,6 +84,8 @@
 	  padding-left: 10px;
 	  padding-right: 10px;
 	  font-weight: bold;
+	  font-family: Corbel, sans-serif;
+	  color: rgba(229, 215, 224, 0.9);
   }
 
   #logout {

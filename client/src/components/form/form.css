@@ -1,5 +1,5 @@
 .container.contact__container{
-    width: 70%;
+     max-width: 800px;
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 20%;
@@ -18,7 +18,7 @@ h1{
 }
 
 .contact__option{
-    background:#f29109b3;
+    background: rgba(0, 0, 0, 0.2);
     padding: 1.2rem;
     border-radius: 1.2rem;
     text-align: center;
@@ -42,12 +42,18 @@ h1{
     font-size: 0.8rem;
 }
 
+#contact {
+    max-width: 700px;
+    margin-left: 150px;
+}
+
 
 /* ============= FORM ============== */
 form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    max-width: 300px;
 }
 
 input, textarea {
@@ -69,6 +75,7 @@ input, textarea {
     border: 1px solid black;
     margin-bottom: 1.5rem;
 }
+
 
 /* ============= MEDIA QURIES (MEDIUM DEVICE) ================== */
 @media screen and (max-width:1042px) {

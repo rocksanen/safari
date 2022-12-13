@@ -1,6 +1,6 @@
-import Cart from "./Cart";
+//import Cart from "./Cart";
 
-const ProductDetails = ({ product, visible, setCart, cartItems }) => {
+const ProductDetails = ({ product, visible, setCart, cartItems, sideOpen, setSideOpen }) => {
   if (!visible) return null;
 
   return (
@@ -36,6 +36,8 @@ const ProductDetails = ({ product, visible, setCart, cartItems }) => {
         item={product}
         setCart={() => setCart}
         cartItems={cartItems}
+        sideOpen = {sideOpen}
+        setSideOpen = {setSideOpen}
       />
     </div>
   );
@@ -53,7 +55,7 @@ const CartComponent = (props) => {
       ></input>
       <button
         className="add-to-cart-button"
-        onClick={() => props.setCart(addItem(props.item, props.cartItems))}
+        onClick={() => props.setCart(addItem(props.item, props.cartItemsn))}
       >
         Add to cart
       </button>
@@ -76,7 +78,7 @@ const CartComponent = (props) => {
         "new item name: " + item.name + "\nexisting name: " + existing.name
       );
 
-      if (item.name == existing.name) {
+      if (item.name === existing.name) {
         existing.qty += amount;
         already = true;
       }

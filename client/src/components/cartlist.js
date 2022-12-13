@@ -7,7 +7,7 @@ const CartList = (props) => {
           return (
   
             <li key={item.id}>
-              {item.name} - {item.qty} <button onClick={() => props.setCart(removeItem(item, props.cartItems))}>Remove</button>
+              {item.name} - {item.qty} <button onClick={() => { removeItem(item, props.cartItems, props.setCart); props.setCount(props.count+1)}}>Remove</button>
             </li>
   
           )
@@ -24,10 +24,7 @@ function buy(items) {
   }
   
   function removeItem(item, cartItems) {
-  
-    /*HELP: removing works, HOWEVER: 
-    2. clicking a button wont update on click, only after updates after closing and opening the cart 
-    */
+    
     let removeThis = cartItems.indexOf(item)
   
     if (removeThis > -1) {

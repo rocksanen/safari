@@ -46,9 +46,6 @@ const CartComponent = (props) => {
       console.log(cartItems);
   
       cartItems.map((existing) => {
-        /* THIS SHIT DONT WORK */
-  
-        console.log(existing);
   
         if (item.name === existing.name) {
           existing.qty = parseInt(existing.qty) + amount;
@@ -57,7 +54,6 @@ const CartComponent = (props) => {
         return console.log("existing: " + existing.name);
       })
   
-      /* THIS SHIT DO WORK */
       if (!already) {
         cartItems.push({
           id: item.id,

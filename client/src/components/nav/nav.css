@@ -21,12 +21,12 @@ nav a{
     padding: 0.9rem;
     border-radius: 50%;
     display: flex;
-    color: #f5a142;
+    color: #40adbb;
     font-size: 1.1rem;
 }
 nav a:hover{
     background: rgba(0, 0, 0, 0.3);
-    color: #f5a142;
+    color: #9e42f5;
 }
 
 nav a.active {

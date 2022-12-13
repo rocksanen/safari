@@ -5,15 +5,18 @@
 
 .searchTerm {
     width: 100%;
-    border: 3px solid #00B4CC;
+    border: 2px solid rgba(79, 148, 183, 0.91);
+    border-radius: 50px;
     padding: 5px;
     height: 20px;
-    border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
     position: relative;
+    background-color: rgba(0, 10, 204, 0.05);
   }
-  
+
+
+
   .searchTerm:focus{
-    color: #00B4CC;
+    color: #4fa9de;
   }
+

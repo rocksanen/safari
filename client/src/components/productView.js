@@ -1,5 +1,5 @@
 import "../styles/productView.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Sidebar from "./sidebar";
 import ProductMain from "./productMainArea";
 import LoginBar from "./loginbar";

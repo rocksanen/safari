@@ -1,6 +1,7 @@
 //import Cart from "./Cart";
 
-import Cart from "./Cart";
+import { useState } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const ProductDetails = ({ product, visible, setCart, cartItems }) => {
   if (!visible) return null;
@@ -43,6 +44,10 @@ const ProductDetails = ({ product, visible, setCart, cartItems }) => {
   );
 };
 const CartComponent = (props) => {
+
+  const [error,setError] = useState(null);
+  const { user } = useAuthContext();
+  
   return (
     <div className="add-to-cart-complex">
       <input
@@ -55,10 +60,11 @@ const CartComponent = (props) => {
       ></input>
       <button
         className="add-to-cart-button"
-        onClick={() => props.setCart(addItem(props.item, props.cartItems))}
+        onClick={user ? () => props.setCart(addItem(props.item, props.cartItems)) : () => setError('You must be logged in')}
       >
         Add to cart
       </button>
+      {error && <div className="error">{error}</div>}
       <b id="total"></b>
     </div>
   );

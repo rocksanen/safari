@@ -38,6 +38,7 @@
   z-index: 0;
   max-width: 800px;
   margin-left: 50px;
+  margin-right: 50px;
   margin-top: 30px;
   background: rgba(0, 0, 0, 0.12);
   border-radius: 60px;
@@ -178,9 +179,12 @@
 /*----------------------------------------- Products---------------------------------------------- */
 
 .product-list {
-  padding: 25px;
+  padding: 5px;
   background-color: rgba(209, 173, 66, 0);
   border-radius: 1rem;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .product-list-item {
@@ -201,10 +205,11 @@
 
 .product-list-item-photo:hover {
   opacity: 85%;
+  scale: 107%;
 }
 
 .product-list-item-photo {
-  transition: all 700ms ease;
+  transition: all 900ms ease;
   opacity: 90%;
 }
 
@@ -213,11 +218,9 @@
 }
 
 .product-list-item:hover {
-  box-shadow: -1px 3px 5px -1px rgba(0, 0, 0, 0.63);
+  box-shadow: -1px 3px 6px -1px rgba(0, 0, 0, 0.68);
   transition: all 700ms ease;
   cursor: pointer;
-  width: 150px;
-  height: 155px;
   object-fit: contain;
 }
 

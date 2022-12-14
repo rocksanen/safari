@@ -1,5 +1,6 @@
 const User = require('../models/userModel')
 const jwt = require('jsonwebtoken')
+const { default: mongoose } = require('mongoose')
 
 
 //Token generator function
@@ -15,11 +16,12 @@ const loginUser = async (req, res) => {
     const user = await User.login(email, password)
     const name = user.name;
     const orders = user.orders;
+    const id = user.id;
 
     // create a token
     const token = createToken(user._id)
 
-    res.status(200).json({name, email, token, orders})
+    res.status(200).json({name, email, token, orders, id})
   } catch (error) {
     res.status(400).json({error: error.message})
   }
@@ -42,6 +44,24 @@ const signupUser = async (req, res) => {
   }
 }
 
+const updateUser = async (req, res) => {
+  const { id } = req.params
+  
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    return res.status(404).json({error: 'No such user'})
+  }
+  const user = await User.findByIdAndUpdate({_id:id}, {
+    ...req.body
+  })
+
+  if(!user){
+    return res.status(400).json({error: 'No such user'})
+  }
+
+  res.status(200).json(user)
+  
+}
+
 // For test purposes only!!!!!
 const getUsers = async (req, res) => {
   
@@ -49,4 +69,4 @@ const getUsers = async (req, res) => {
   res.status(200).json(users)
 }
 // getUsers can be removed after not neede anymore
-module.exports = { signupUser, loginUser, getUsers }
+module.exports = { signupUser, loginUser, getUsers, updateUser }

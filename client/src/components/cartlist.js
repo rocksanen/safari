@@ -44,9 +44,7 @@ const CartList = (props) => {
     }
   }
 function Buy(items) {
-
   updateUser(items)
-  console.log(items);
   /*
   const { user , dispatch} = useAuthContext();
   const [orders,setOrders] = useState([]); 

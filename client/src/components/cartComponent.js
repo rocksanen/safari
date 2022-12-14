@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
+import ProductDetails from "./productDetails";
 
 const CartComponent = (props) => {
 
@@ -42,22 +43,26 @@ const CartComponent = (props) => {
       console.log(cartItems);
   
       if (!amount) amount = 1;
-      console.log("Määrä: " + amount);
-      console.log(cartItems);
-  
+
       cartItems.map((existing) => {
   
         if (item.name === existing.name) {
           existing.qty = parseInt(existing.qty) + amount;
           already = true;
+
+          if (existing.qty > props.item.stock) {
+            existing.qty = props.item.stock;
+          }
         }
         return console.log("existing: " + existing.name);
       })
+      
   
       if (!already) {
         cartItems.push({
           id: item.id,
           name: item.name,
+          item: item,
           qty: amount
         });
       }

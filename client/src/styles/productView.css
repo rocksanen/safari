@@ -253,36 +253,39 @@ li.product-details-list-item {
 }
 
 /* Shopping cart */
-.cart {
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  padding-right: 20px;
-}
 .cart-box {
   display: flex;
   flex-direction: column;
-  min-width: 30%;
-  min-height: 30%;
-  background-color: rgba(245, 125, 84, 0.93);
+  min-width: 340px;
+  min-height: 400px;
+  background-color: rgba(50, 47, 96, 0.75);
   border-radius: 3%;
   box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
   position: absolute;
   right: 0;
   z-index: 999;
+  margin-top: 50px;
+  margin-right: 45px;
 }
-.Cart-box {
-  padding-bottom: 2em;
-}
+
 .cart-box li {
-  background-color: antiquewhite;
-  border: dotted 1px black;
-  list-style: none;
-  margin: 0.25em 0 0 0.1em;
+  background: transparent;
+  border: 0px;
+  list-style: circle;
+  color: rgba(221, 218, 229, 0.73);
+  font-weight: bold;
+  font-family: "Courier New", sans-serif;
+  column-gap: 10px;
+  margin-bottom: 20px;
 }
 .cart-box li button {
   position: absolute;
   right: 1em;
+  padding: 7px;
+}
+
+li {
+  padding: 5px;
 }
 
 .cart-button {
@@ -310,6 +313,7 @@ li.product-details-list-item {
   margin-top: 1px;
   margin-right: 1px;
   position: absolute;
+  right: 0;
   font-family: Tahoma, sans-serif;
   border-radius: 50%;
   border-width: 0px;
@@ -317,8 +321,27 @@ li.product-details-list-item {
   padding: 4px;
   text-align: center;
   font-weight: bold;
-  background-color: #26cc6e;
+  background-color: #496385;
   pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
+}
+
+.close-button-profile {
+  line-height: 12px;
+  width: 20px;
+  height: 20px;
+  font-size: 10pt;
+  border-radius: 50%;
+  position: absolute;
+  border-width: 0px;
+  color: white;
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #496385;
+  pointer-events: auto;
+  right: 0;
   cursor: pointer;
   box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
 }
@@ -335,16 +358,36 @@ li.product-details-list-item {
 }
 
 #active-profile * {
-margin-left: 1em;
+  padding-top: 1px;
+  padding-left: 4px;
 }
 
 .profile-button {
-  max-width: 2em;
-  max-height: 2em;
+  max-width: 3em;
+  max-height: 3em;
+  margin-left: 7px;
+  transition: all 700ms ease;
 }
 
 .profile-button:hover {
+  scale: 1.1;
   cursor: pointer;
+}
+
+#profile-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 340px;
+  min-height: 400px;
+  background-color: rgba(71, 47, 96, 0.7);
+  border-radius: 3%;
+  box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
+  position: absolute;
+  right: 0;
+  z-index: 994;
+  margin-top: 80px;
+  margin-right: 20px;
+  align-items: center;
 }
 
 .log-out-button {

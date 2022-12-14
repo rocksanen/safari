@@ -4,24 +4,30 @@
     min-width:35px;
     min-height:35px;
     text-align:center;
-    transition: all 600ms ease;
+    transition: all 700ms ease;
   }
   
   #badge{
-    height: 2%;
-    width: 3%;
-    background-color: rgba(33, 201, 201, 0.83);
+    height: 20px;
+    width: 0.5px;
+    background-color: rgba(162, 208, 24, 0.77);
     color: white;
     font-size: 9px;
+    font-weight: bold;
     position: relative;
-    transform: rotate(-40deg);
+    transform: rotate(-31deg);
     border-radius: 5px;
-    top: 13px;
+    top: 15px;
     left: 9px;
-    padding: 10px;
+    padding: 7px 15px 4px 7px;
     z-index: 0;
-    text-align: left;
+    text-align: center;
     font-family: Tahoma, sans-serif;
+    transition: all 700ms ease;
+  }
+
+  #badge:hover {
+    transform: rotate(10deg);
   }
   
   .shopping-cart-icon{
@@ -33,6 +39,6 @@
   }
 
   .shopping-cart:hover {
-    scale: 0.9;
+    scale: 1.1;
     cursor:pointer;
   }

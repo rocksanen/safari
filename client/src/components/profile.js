@@ -10,23 +10,22 @@ const Profile = ({user}) => {
     };
   
     return (
-        
       <>
         <img className="profile-button" src={profile} alt="profile-icon" onClick={handleOpen} />
-        {open ? <div>
+        {open ? <div id="profile-info"> <button className="close-button-profile" onClick={() => setOpen(false)}>x</button>
             <h4>
               Personal information:
             </h4>
             <ul>
                 <li key={user._id}>
-                    <b>Name:</b> {user.name}
+                    <b>Nimi:</b> {user.name}
                 </li>
                 <li key={user._id}>
                    <b>Email:</b> {user.email}
                 </li>
             </ul>
             <h4>
-                Your orders
+                Tilauksesi
             </h4>
             <ul>
                 {user && user.orders.map((order)=>{

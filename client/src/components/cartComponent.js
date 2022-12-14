@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
-import ProductDetails from "./productDetails";
 
 const CartComponent = (props) => {
 

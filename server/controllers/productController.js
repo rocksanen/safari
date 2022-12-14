@@ -1,5 +1,6 @@
 const Product = require('../models/productModel')
 const mongoose = require('mongoose')
+ 
 
 // get all products
 const getProducts = async (req, res) => {
@@ -10,13 +11,14 @@ const getProducts = async (req, res) => {
 
 // get a single product
 const getProduct = async (req, res) => {
-  const { id } = req.params
+  const { productId } = req.params
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: 'No such product, not valid id'})
+  console.log(req.params,'kalle');
+  if (!mongoose.Types.ObjectId.isValid(productId)) {
+    return res.status(404).json({error: 'No such product, not valid id jepujee'})
   }
 
-  const product = await Product.findById(id)
+  const product = await Product.findById(productId)
 
   if (!product) {
     return res.status(404).json({error: 'No such product'})
@@ -58,8 +60,6 @@ const createProduct = async (req, res) => {
     res.status(400).json({error: error.message})
   }
 }
-
-
 // delete a product
 
 const deleteProduct = async (req, res) => {
@@ -73,7 +73,7 @@ const deleteProduct = async (req, res) => {
   }
   res.status(200).json(product);
 }
-
+ 
 // update a product
 const updateProduct = async (req, res) => {
   const { id } = req.params

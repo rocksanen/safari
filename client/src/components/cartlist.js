@@ -20,14 +20,15 @@ const CartList = (props) => {
       </ul>
       <span className="cart-bottom">
         <p>Total: {total} €</p>
-        <button id="buy-button" onClick={() => Buy(props.cartItems,user)}>OSTA KAIKKI</button>
+        <button id="buy-button" onClick={() => Buy(props.cartItems,user, props.products)}>OSTA KAIKKI</button>
       </span>
       </>
     )
   }
 
-  const Buy = (items,user) =>{
-    updateUser(items,user)
+  const Buy = (cartItems,user,products) =>{
+    updateUser(cartItems,user)
+    updateProductStock(cartItems,products)
     }
 
   const updateUser = async (cartItems,user) => {
@@ -63,6 +64,41 @@ const CartList = (props) => {
         }catch(error){
           console.log(error.message);
         }
+      }
+
+
+      const updateProductStock = (cartItems,products) =>{
+
+        for(let i = 0; i < cartItems.length; i++) {
+      
+          for(let j = 0; j < products.length; j++) {
+      
+            if(cartItems[i].id === products[j].id) {
+      
+                const object = products[j]
+                const id = object.id
+                const stockAmount = object.stock - cartItems[i].qty
+                sendStockToDB(stockAmount,id)
+            }
+          }
+        }  
+      }
+      
+      
+      const sendStockToDB = async (stockAmount, id) => {
+      
+        try{
+        
+          const response = await fetch(`http://localhost:4000/api/products/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({stock:stockAmount}),
+            headers: {'Content-Type' : 'application/json'}
+          })
+              
+            if (!response.ok) {console.log('Whoopsie, could not fetch')}   
+            return response
+      
+        }catch(error) {console.error(error.message)}
       }
 
 

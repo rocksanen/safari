@@ -13,7 +13,6 @@ const getProducts = async (req, res) => {
 const getProduct = async (req, res) => {
   const { productId } = req.params
 
-  console.log(req.params,'kalle');
   if (!mongoose.Types.ObjectId.isValid(productId)) {
     return res.status(404).json({error: 'No such product, not valid id jepujee'})
   }

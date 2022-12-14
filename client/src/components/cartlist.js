@@ -3,6 +3,8 @@ import { useAuthContext } from "../hooks/useAuthContext";
 const CartList = (props) => {
   const { user } = useAuthContext();
 
+  console.log(user, 'start');
+
   let total = 0;
 
     return (
@@ -20,14 +22,15 @@ const CartList = (props) => {
       </ul>
       <span className="cart-bottom">
         <p>Total: {total} €</p>
-        <button id="buy-button" onClick={() => Buy(props.cartItems,user)}>OSTA KAIKKI</button>
+        <button id="buy-button" onClick={() => Buy(props.cartItems,user, props.products)}>OSTA KAIKKI</button>
       </span>
       </>
     )
   }
 
-  const Buy = (items,user) =>{
-    updateUser(items,user)
+  const Buy = (cartItems,user,products) =>{
+    updateUser(cartItems,user)
+    updateProductStock(cartItems,products)
     }
 
   const updateUser = async (cartItems,user) => {
@@ -39,7 +42,7 @@ const CartList = (props) => {
         quantity: cartItems[i].qty
       })
     }
-
+    console.log(reqBody, user);
     sendToDB(reqBody,user)
   }
 
@@ -47,22 +50,58 @@ const CartList = (props) => {
 
   const sendToDB = async(reqBody,user) => {
 
-      const API_URL = "http://localhost:4000/api";
+    const API_URL = "http://localhost:4000/api";
         
-      try{
-        console.log(reqBody);
-        const response = await fetch(API_URL +`/user/${user.id}`, {
-          method: 'PATCH',
-          body: JSON.stringify({orders: reqBody}),
-          headers: {'Content-Type': 'application/json'}})
-    
-        if (!response.ok) {
-          console.log('Something went wrong with updating the database!');
-        }
-    
-        }catch(error){
-          console.log(error.message);
-        }
+    try{
+      console.log(reqBody);
+      console.log(user.id, 'jepuli');
+      const response = await fetch(API_URL +`/user/${user.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({orders: reqBody}),
+        headers: {'Content-Type': 'application/json'}})
+  
+      if (!response.ok) {
+        console.log('Something went wrong with updating the database!');
+      }
+  
+      }catch(error){
+        console.log(error.message);
+      }
+      }
+
+
+      const updateProductStock = (cartItems,products) =>{
+
+        for(let i = 0; i < cartItems.length; i++) {
+      
+          for(let j = 0; j < products.length; j++) {
+      
+            if(cartItems[i].id === products[j].id) {
+      
+                const object = products[j]
+                const id = object.id
+                const stockAmount = object.stock - cartItems[i].qty
+                sendStockToDB(stockAmount,id)
+            }
+          }
+        }  
+      }
+      
+      
+      const sendStockToDB = async (stockAmount, id) => {
+      
+        try{
+        
+          const response = await fetch(`http://localhost:4000/api/products/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({stock:stockAmount}),
+            headers: {'Content-Type' : 'application/json'}
+          })
+              
+            if (!response.ok) {console.log('Whoopsie, could not fetch')}   
+            return response
+      
+        }catch(error) {console.error(error.message)}
       }
 
 

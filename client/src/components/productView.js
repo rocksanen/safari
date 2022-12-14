@@ -40,7 +40,14 @@ function ProductView({products}) {
         <div className="product-view">
             <div className="filter-cart">
             <Filter value={filter} onChange={handleFilter} />
-            <Cart cartItems={ cart } setCart = { setCart } cartOpen = { cartOpen } setCartOpen = { setCartOpen } count = { count } setCount = { setCount }/>
+            <Cart 
+            cartItems={ cart } 
+            setCart = { setCart } 
+            cartOpen = { cartOpen } 
+            setCartOpen = { setCartOpen } 
+            count = { count } 
+            setCount = { setCount }
+            products = {products}/>
             {user && (
             <div id='active-profile'>
                 <Profile user={user}/>

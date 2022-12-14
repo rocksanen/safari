@@ -87,6 +87,7 @@
   cursor: pointer;
   margin-top: 100px;
   transition: all 700ms ease;
+  
 }
 
 .product-side-panel-toggle:hover {
@@ -100,7 +101,7 @@
   top: 10px;
   width: 0;
   height: 0;
-  transition: all 700ms ease;
+  transition: all 700ms ease; 
 }
 
   .login-side-panel {

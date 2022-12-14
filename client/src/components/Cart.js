@@ -14,9 +14,6 @@ const Cart = ({ cartItems, setCart, cartOpen, setCartOpen, count, setCount}) => 
       </div>
     )
   }
-
   return <CartIcon cartItems = {cartItems} setCartOpen = {setCartOpen}/>
-  
 }
-
 export default Cart;

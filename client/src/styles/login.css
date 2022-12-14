@@ -12,26 +12,21 @@
 }
 
   .login-form{
-
 	display: flex;
 	flex-direction: column;
 	text-align: center;
   	align-items: center;
   	justify-content: center;
   	color: white;
-
-
   }
 
   .register-form {
-
 	display: flex;
 	flex-direction: column;
 	text-align: center;
   	align-items: center;
   	justify-content: center;
   	color: white;
-
   }
   
   @media screen and (min-width: 600px) {
@@ -78,17 +73,27 @@
   #active-profile {
 	  display: flex;
 	  flex-direction: row;
+	  float: right;
+	  margin-right: 40px;
+	  margin-top: 15px;
+	  min-width: 200px;
   }
 
   #user-active {
 	  padding-left: 10px;
 	  padding-right: 10px;
+	  padding-top: 12px;
 	  font-weight: bold;
 	  font-family: Corbel, sans-serif;
 	  color: rgba(229, 215, 224, 0.9);
   }
 
   #logout {
-	  max-width: 100px;
-	  max-height: 25px;
+	  max-width: 3em;
+	  max-height: 3em;
+	  transition: all 700ms ease;
+  }
+
+  #logout:hover {
+	  scale: 1.1;
   }

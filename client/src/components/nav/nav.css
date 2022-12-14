@@ -23,9 +23,10 @@ nav a{
     display: flex;
     color: #40adbb;
     font-size: 1.1rem;
+    transition: all 400ms ease;
 }
 nav a:hover{
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.12);
     color: #9e42f5;
 }
 

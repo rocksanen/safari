@@ -1,19 +1,22 @@
 const CartList = (props) => {
-  
+  let total = 0;
+
     return (
       <>
       <ul className="Cart-box">
         {props.cartItems.map((item) => {
+          total += item.item.price;
           return (
-  
             <li key={item.id}>
-              {item.name} <div clasName="cart-quantity-component"><button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, false); props.setCount(props.count+1)}} > - </button> {item.qty} <button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, true); props.setCount(props.count+1) }}>+</button></div><button className="cart-remove-button" onClick={() => { removeItem(item, props.cartItems); props.setCount(props.count+1)}}>Remove</button>
+              {item.name} <div className="cart-quantity-component"><button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, false); props.setCount(props.count+1)}} > - </button> {item.qty} <button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, true); props.setCount(props.count+1) }}>+</button></div><button className="cart-remove-button" onClick={() => { removeItem(item, props.cartItems); props.setCount(props.count+1)}}>Remove</button>
             </li>
-  
           )
         })}
       </ul>
-      <button id="buy-button" onClick={() => buy(props.cartItems)}>OSTA KAIKKI</button>
+      <span className="cart-bottom">
+        <p>Total: {total} €</p>
+        <button id="buy-button" onClick={() => buy(props.cartItems)}>OSTA KAIKKI</button>
+      </span>
       </>
     )
   }

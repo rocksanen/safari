@@ -269,22 +269,38 @@ li.product-details-list-item {
   margin-right: 45px;
 }
 
+.cart-box * {
+  border: 0px;
+  list-style: circle;
+  color: rgba(221, 218, 229, 0.73);
+  font-weight: bold;
+  font-family: "Courier New", sans-serif;
+}
+
+.cart-box p {
+  color:aliceblue;
+  margin: 0 0 1.5em 1em;
+}
+
 .cart-box li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  border: 0px;
-  list-style: circle;
-  color: rgba(221, 218, 229, 0.73);
-  font-weight: bold;
-  font-family: "Courier New", sans-serif;
   column-gap: 10px;
   margin-right: 2em ;
   margin-bottom: 20px;
   border-bottom: 1px dashed white ;
+  padding: 5px;
 }
+
+.cart-bottom {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+
 .Cart-box {
   padding-left: 2em;
 }
@@ -294,11 +310,6 @@ li.product-details-list-item {
   margin-bottom: 0;
   padding: 7px;
 }
-
-li {
-  padding: 5px;
-}
-
 
 .cart-button {
   height: 2em;

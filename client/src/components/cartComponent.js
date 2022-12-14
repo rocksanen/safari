@@ -42,9 +42,7 @@ const CartComponent = (props) => {
       console.log(cartItems);
   
       if (!amount) amount = 1;
-      console.log("Määrä: " + amount);
-      console.log(cartItems);
-  
+
       cartItems.map((existing) => {
   
         if (item.name === existing.name) {
@@ -58,6 +56,7 @@ const CartComponent = (props) => {
         cartItems.push({
           id: item.id,
           name: item.name,
+          item: item,
           qty: amount
         });
       }

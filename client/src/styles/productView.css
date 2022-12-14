@@ -281,7 +281,12 @@ li.product-details-list-item {
   font-weight: bold;
   font-family: "Courier New", sans-serif;
   column-gap: 10px;
+  margin-right: 2em ;
   margin-bottom: 20px;
+  border-bottom: 1px dashed white ;
+}
+.Cart-box {
+  padding-left: 2em;
 }
 
 .cart-remove-button {

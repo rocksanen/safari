@@ -1,9 +1,9 @@
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const CartList = (props) => {
+  const { user } = useAuthContext();
 
   let total = 0;
-  const { user } = useAuthContext();
 
     return (
       <>
@@ -20,7 +20,7 @@ const CartList = (props) => {
       </ul>
       <span className="cart-bottom">
         <p>Total: {total} €</p>
-        <button id="buy-button" onClick={() => Buy(props.cartItems, user)}>OSTA KAIKKI</button>
+        <button id="buy-button" onClick={() => Buy(props.cartItems,user)}>OSTA KAIKKI</button>
       </span>
       </>
     )

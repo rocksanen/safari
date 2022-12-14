@@ -1,12 +1,20 @@
 .container.contact__container{
-     max-width: 800px;
     display: flex;
-    flex-direction: row;
-    gap: 20%;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 10%;
+    padding-top: 20px;
 }
 
 h1{
-    margin-left: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 0px !important;
+}
+
+.site-header:not(.scroll-header) .custom-logo-link img {
+    display: none;
 }
 
 .contact__options{
@@ -48,8 +56,8 @@ h1{
 }
 
 #contact {
-    margin-left: 50px;
     margin-top: 50px;
+    margin-bottom: 150px;
     display: flex;
     flex-direction: column;
 }

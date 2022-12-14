@@ -2,36 +2,37 @@
 
   .shopping-cart{
     min-width:35px;
-    min-height: 35px;
+    min-height:35px;
     text-align:center;
+    transition: all 600ms ease;
   }
   
   #badge{
-    height:8%;
-    width:18%;
-    background-color:#21c999;
-    color:white;
-    font-size: 20px;
-    position:relative;
-    transform: rotate(-50deg);
-    border-radius:5px;
-    top:15px;
-    left:17px;
-    padding:10px;
-    z-index:0;
-    text-align:center;
-    font-family: Arial, sans-serif;
+    height: 2%;
+    width: 3%;
+    background-color: rgba(33, 201, 201, 0.83);
+    color: white;
+    font-size: 9px;
+    position: relative;
+    transform: rotate(-40deg);
+    border-radius: 5px;
+    top: 13px;
+    left: 9px;
+    padding: 10px;
+    z-index: 0;
+    text-align: left;
+    font-family: Tahoma, sans-serif;
   }
   
   .shopping-cart-icon{
-    font-size:50px;
-    opacity:1;
+    font-size: 35px;
+    opacity: 1;
     z-index: 2;
-    color:grey;
+    color: #7a6abd;
     position: relative;
   }
 
   .shopping-cart:hover {
-    scale: 1.2;
+    scale: 0.9;
     cursor:pointer;
   }

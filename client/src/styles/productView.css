@@ -273,15 +273,23 @@ li.product-details-list-item {
   padding-bottom: 2em;
 }
 .cart-box li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: antiquewhite;
   border: dotted 1px black;
   list-style: none;
   margin: 0.25em 0 0 0.1em;
 }
-.cart-box li button {
+
+
+.cart-quantity-component {
+}
+.cart-remove-button {
   position: absolute;
   right: 1em;
 }
+
 
 .cart-button {
   height: 2em;

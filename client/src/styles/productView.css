@@ -256,6 +256,7 @@ li.product-details-list-item {
 .cart-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-width: 340px;
   min-height: 400px;
   background-color: rgba(50, 47, 96, 0.75);
@@ -272,6 +273,7 @@ li.product-details-list-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background: transparent;
   border: 0px;
   list-style: circle;
@@ -282,12 +284,9 @@ li.product-details-list-item {
   margin-bottom: 20px;
 }
 
-
-.cart-quantity-component {
-}
 .cart-remove-button {
-  position: absolute;
-  right: 1em;
+  margin-right: 1em;
+  margin-bottom: 0;
   padding: 7px;
 }
 
@@ -303,6 +302,18 @@ li {
 }
 .cart-button:hover {
   cursor: pointer;
+}
+
+.cart-quantity-component {
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  margin: auto
+}
+
+.cart-plusminus {
+  margin: 0;
+  margin-bottom: 0;
 }
 
 #buy-button {
@@ -406,3 +417,4 @@ li {
 .log-out-button:hover {
   cursor: url('https://cdn.discordapp.com/attachments/940941259571355688/1051889021921546271/6ctiny.png'), pointer;
 }
+

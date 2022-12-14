@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const CartList = (props) => {
+
   let total = 0;
+
   const { user , dispatch} = useAuthContext();
   const [orders,setOrders] = useState([]); 
   const updateUser = async (cartItems) => {
@@ -106,7 +108,8 @@ function Buy(items) {
       <>
       <ul className="Cart-box">
         {props.cartItems.map((item) => {
-          total += item.item.price;
+
+          total += item.item.price*item.qty;
           return (
             <li key={item.id}>
               {item.name} <div className="cart-quantity-component"><button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, false); props.setCount(props.count+1)}} > - </button> {item.qty} <button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, true); props.setCount(props.count+1) }}>+</button></div><button className="cart-remove-button" onClick={() => { removeItem(item, props.cartItems); props.setCount(props.count+1)}}>Remove</button>
@@ -138,7 +141,10 @@ function Buy(items) {
     let changeThis = cartItems.indexOf(item);
 
     increase ? cartItems[changeThis].qty++ : cartItems[changeThis].qty--;
-    
+
+    if (item.qty > cartItems[changeThis].item.stock) {
+      item.qty = cartItems[changeThis].item.stock;
+    }
 
     if (!cartItems[changeThis].qty) {
       cartItems.splice(changeThis, 1)

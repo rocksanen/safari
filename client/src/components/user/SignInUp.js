@@ -2,7 +2,7 @@
 import Login from "./login"
 import Register from "./Register"
 import { useState } from "react";
-import '../styles/login.css';
+import '../../styles/login.css';
 
 const SignInUp = ({visible}) => {
 

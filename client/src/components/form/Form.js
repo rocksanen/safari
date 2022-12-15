@@ -1,5 +1,5 @@
 import React from "react";
-import "./form.css";
+import "../../styles/form.css";
 //import { useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import profile from "../images/icons/profile.png"
+import profile from "../../images/icons/profile.png"
 const Profile = ({user}) => {
 
   const [orders,setOrders] = useState([]);

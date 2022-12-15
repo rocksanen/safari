@@ -1,5 +1,5 @@
-import "../styles/productView.css";
-import ProductListItem from "../scripts/ProductListItem";
+import "../../styles/productView.css";
+import ProductListItem from "./ProductListItem";
 
 const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products,setLoadProducts,loadProducts}) => {
 

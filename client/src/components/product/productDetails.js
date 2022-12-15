@@ -1,6 +1,6 @@
 
 
-import CartComponent from "./cartComponent";
+import CartComponent from "../cart/cartComponent";
 
 const ProductDetails = ({ product, visible, setSideOpen, setCart, cartItems,count,setCount }) => {
 

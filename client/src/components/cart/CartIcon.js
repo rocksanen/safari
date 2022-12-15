@@ -1,5 +1,5 @@
 
-import '../styles/carticon.css';
+import '../../styles/carticon.css';
 
 const CartIcon = ({setCartOpen,cartItems}) => {
     

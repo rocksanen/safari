@@ -3,8 +3,8 @@ import "./styles/background.css";
 import { useState, useEffect, useRef } from "react";
 
 //components
-import Background from "./components/background";
-import ProductView from "./components/productView";
+import Background from "./components/background/background";
+import ProductView from "./components/product/productView";
 import Nav from "./components/nav/nav";
 
 
@@ -64,7 +64,7 @@ function App() {
       const backgroundposition = 1 - positionRef.current / 900;
       //mainstuff.style.opacity = mainposition;
       sunset.style.opacity = sunposition;
-      background.style.opacity = backgroundposition;
+      background.style.opacity = backgroundposition; 
     }
   };
 

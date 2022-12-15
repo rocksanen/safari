@@ -16,6 +16,7 @@ function App() {
   const [sunset, setSunset] = useState(null);
   const [background, setBackground] = useState(null);
   const [products, setProducts] = useState([]);
+  const [loadProducts, setLoadProducts] = useState('')
 
   useEffect(() => {
 
@@ -24,7 +25,8 @@ function App() {
     setSunset(document.getElementById("sunset"));
     setBackground(document.getElementById("background"));
 
-  }, []);
+  }, [loadProducts]);
+
 
   const fetchProduct = async () => {
     try {
@@ -71,7 +73,7 @@ function App() {
       <div className="wrapper" onScroll={handleScroll}>
         <BrowserRouter>
           <Background />
-          <ProductView products={products} />
+          <ProductView products={products} setProducts = {setProducts} setLoadProducts = {setLoadProducts} loadProducts = {loadProducts}/>
         </BrowserRouter>
       </div>
       <Nav />

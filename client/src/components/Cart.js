@@ -2,7 +2,7 @@
 import CartIcon from './CartIcon';
 import CartList from './cartlist';
 
-const Cart = ({ cartItems, setCart, cartOpen, setCartOpen, count, setCount, products}) => {
+const Cart = ({ cartItems, setCart, cartOpen, setCartOpen, count, setCount, products, setProducts}) => {
 
   if (cartOpen) {
     return (

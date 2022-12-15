@@ -12,7 +12,7 @@ import Profile from "./profile";
 import logoutbutton from '../images/icons/logout.png'
 import { useEffect } from "react";
 
-function ProductView({products}) {
+function ProductView({products, setProducts, setLoadProducts, loadProducts}) {
     const {user} = useAuthContext();
     const {logout} = useLogout();
     const [sideOpen, setSideOpen] = useState(false);
@@ -47,7 +47,8 @@ function ProductView({products}) {
             setCartOpen = { setCartOpen } 
             count = { count } 
             setCount = { setCount }
-            products = {products}/>
+            products = {products}
+            setProducts = {setProducts}/>
             {user && (
             <div id='active-profile'>
                 <Profile user={user}/>
@@ -57,7 +58,8 @@ function ProductView({products}) {
           </div>
         <ProductMain
           products = {ItemAfterFilter}  setSideOpen = {setSideOpen} 
-          sideOpen = {sideOpen} setSelectedProduct = {setSelectedProduct}/>
+          sideOpen = {sideOpen} setSelectedProduct = {setSelectedProduct}
+          setLoadProducts = {setLoadProducts} loadProducts = {loadProducts}/>
             <div className='sidecontainer'>
                 <Sidebar product = {selectedProduct} 
                 setSideOpen = {setSideOpen} 

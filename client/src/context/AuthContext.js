@@ -8,8 +8,6 @@ export const authReducer = (state, action) => {
       return { user: action.payload }
     case 'LOGOUT':
       return { user: null }
-    case 'UPDATE':
-        return {user: action.payload}
     default:
       return state
   }
@@ -26,10 +24,6 @@ export const AuthContextProvider = ({ children }) => {
 
     if (user) {
       dispatch({ type: 'LOGIN', payload: user }) 
-    }
-
-    if(user){
-      dispatch({type: 'UPDATE', payload: user})
     }
     
   }, [])

@@ -16,7 +16,7 @@ const loginUser = async (req, res) => {
     const user = await User.login(email, password)
     const name = user.name;
     const orders = user.orders;
-    const id = user.id;
+    const id = user._id;
 
     // create a token
     const token = createToken(user._id)
@@ -35,10 +35,11 @@ const signupUser = async (req, res) => {
   try {
     const user = await User.signup(name,email, password)
 
+    const id = user._id;
     // create a token
     const token = createToken(user._id)
 
-    res.status(200).json({name,email, token})
+    res.status(200).json({name,email, token,id})
   } catch (error) {
     res.status(400).json({error: error.message})
   }

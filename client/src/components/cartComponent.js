@@ -39,8 +39,6 @@ const CartComponent = (props) => {
       let already = false;
       let amount = parseInt(document.querySelector("#quantity").value);
   
-      console.log(cartItems);
-  
       if (!amount) amount = 1;
 
       cartItems.map((existing) => {
@@ -58,7 +56,7 @@ const CartComponent = (props) => {
       
   
       if (!already) {
-        (amount > item.stock) ? amount = item.stock : console.log('amount ok');
+        (amount > item.stock) ? amount = item.stock : console.log('');;
         cartItems.push({
           id: item.id,
           name: item.name,

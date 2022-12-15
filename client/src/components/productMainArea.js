@@ -1,7 +1,7 @@
 import "../styles/productView.css";
 import ProductListItem from "../scripts/ProductListItem";
 
-const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products}) => {
+const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products,setLoadProducts,loadProducts}) => {
 
   return (
     <div id="products" className="product-main-area">
@@ -14,6 +14,7 @@ const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products}) => {
             onClick={() => {
               setSideOpen(!sideOpen ? !sideOpen : sideOpen);
               setSelectedProduct(item);
+              setLoadProducts(loadProducts + 1)
             }}
           />
         ))}

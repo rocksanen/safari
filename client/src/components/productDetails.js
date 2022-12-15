@@ -2,7 +2,7 @@
 
 import CartComponent from "./cartComponent";
 
-const ProductDetails = ({ product, visible, setCart, cartItems,count,setCount }) => {
+const ProductDetails = ({ product, visible, setSideOpen, setCart, cartItems,count,setCount }) => {
 
   if (!visible) return null;
 
@@ -41,6 +41,7 @@ const ProductDetails = ({ product, visible, setCart, cartItems,count,setCount })
         cartItems={cartItems}
         count = {count}
         setCount = {setCount}
+        setSideOpen = {setSideOpen}
       />
     </div>
   );

@@ -15,7 +15,8 @@ const Cart = ({ cartItems, setCart, cartOpen, setCartOpen, count, setCount, prod
           count = {count} 
           setCount={setCount}
           products = {products}
-          setProducts = {setProducts} />
+          setCartOpen = {setCartOpen}
+          />
         </div>
       </div>
     )

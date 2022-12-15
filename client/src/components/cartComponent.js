@@ -10,7 +10,7 @@ const CartComponent = (props) => {
   
     const dothis = () => {
   
-      user ? props.setCart(addItem(props.item, props.cartItems)) : (() => setError('You must be logged in'))();
+      user ? props.setCart(addItem(props.item, props.cartItems, props.setSideOpen)) : (() => setError('You must be logged in'))();
   
     }
     
@@ -35,7 +35,7 @@ const CartComponent = (props) => {
       </div>
     );
   
-    function addItem(item, cartItems) {
+    function addItem(item, cartItems, setSideOpen) {
       let already = false;
       let amount = parseInt(document.querySelector("#quantity").value);
   
@@ -64,6 +64,7 @@ const CartComponent = (props) => {
           qty: amount
         });
       }
+      setSideOpen(false);
       return cartItems;
     }
   };

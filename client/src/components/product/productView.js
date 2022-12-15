@@ -40,7 +40,7 @@ function ProductView({products, setProducts, setLoadProducts, loadProducts}) {
         <div className="product-view">
             <div className="filter-cart">
             <Filter value={filter} onChange={handleFilter} />
-            <Cart 
+            {user && (<Cart 
             cartItems={ cart } 
             setCart = { setCart } 
             cartOpen = { cartOpen } 
@@ -49,10 +49,11 @@ function ProductView({products, setProducts, setLoadProducts, loadProducts}) {
             setCount = { setCount }
             products = {products}
             setProducts = {setProducts}/>
+            )}
             {user && (
             <div id='active-profile'>
                 <Profile user={user}/>
-                <img className="log-out-button" src={logoutbutton} alt="log-out" onClick={handleSubmit} id="logout" />
+                <img className="log-out-button" src={logoutbutton} alt="log-out" onClick={() => {handleSubmit(); setCart([])}} id="logout" />
                 <div id='user-active'>{user.name}</div>
             </div>)}
           </div>

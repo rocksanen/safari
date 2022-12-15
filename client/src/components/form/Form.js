@@ -6,25 +6,25 @@ import { BsWhatsapp } from "react-icons/bs";
 const Form = () => {
   return (
     <div id="contact">
-      <h1>Contact Us</h1>
+      <h1>Ota yhteyttä</h1>
       <div className="container contact__container">
         <div className="contact__options">
           <article className="contact__option">
             <MdOutlineEmail className="icon" />
             <h4>Email</h4>
             <h5>safari@support.com</h5>
-            <a href="mailto:safari@support.com">Send a message</a>
+            <a href="mailto:safari@support.com">Lähetä</a>
           </article>
           <article className="contact__option">
             <BsWhatsapp className="icon" />
-            <h4>Send a message</h4>
+            <h4>Lähetä viesti</h4>
             <h5>040 123 456</h5>
             <a
               href="https://api.whatsapp.com/send?phone+35840123456"
               target="_blank"
               rel="noreferrer"
             >
-              Call us or leave us a message
+              Soita meille arkisin 22-06
             </a>
           </article>
         </div>
@@ -33,18 +33,18 @@ const Form = () => {
           <input
             type={"text"}
             name="name"
-            placeholder="Your Full Name"
+            placeholder="Koko nimesi"
             required
           />
           <input type={"email"} name="email" placeholder="email" required />
           <textarea
             name="message"
             rows={"7"}
-            placeholder="Your feedback"
+            placeholder="Tähän saa valittaa.."
             required
           />
           <button type="submit" className="btn">
-            Sumbit
+            Lähetä
           </button>
         </form>
       </div>

@@ -12,13 +12,13 @@ const CartList = (props) => {
           total += item.item.price*item.qty;
           return (
             <li key={item.id}>
-              {item.name} <div className="cart-quantity-component"><button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, false); props.setCount(props.count+1)}} >&nbsp;-&nbsp;</button> {item.qty} <button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, true); props.setCount(props.count+1) }}>+</button></div><button className="cart-remove-button" onClick={() => { removeItem(item, props.cartItems); props.setCount(props.count+1)}}>Remove</button>
+              {item.name} <div className="cart-quantity-component"><button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, false); props.setCount(props.count+1)}} >&nbsp;-&nbsp;</button> {item.qty} <button className="cart-plusminus" onClick={() => {changeAmount(item, props.cartItems, true); props.setCount(props.count+1) }}>+</button></div><button className="cart-remove-button" onClick={() => { removeItem(item, props.cartItems); props.setCount(props.count+1)}}>Poista</button>
             </li>
           )
         })}
       </ul>
       <span className="cart-bottom">
-        <p>Total: {total} €</p>
+        <p>Yhteensä: {total} €</p>
         <button id="buy-button" onClick={() => Buy(props.cartItems,user, props.products, props.setCart, props.setCartOpen, props.setProducts)}>OSTA KAIKKI</button>
       </span>
       </>

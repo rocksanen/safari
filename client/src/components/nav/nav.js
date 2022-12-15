@@ -1,5 +1,5 @@
 import React from "react";
-import "./nav.css";
+import "../../styles/nav.css";
 import { FiHome } from "react-icons/fi";
 import { BsShop } from "react-icons/bs";
 import { AiOutlineMessage } from "react-icons/ai";

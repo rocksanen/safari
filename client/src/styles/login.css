@@ -5,13 +5,13 @@
   	align-items: center;
   	justify-content: center;
 	color: #431b00;
-	font-family: Elephant, sans-serif;
+	font-family: Raleway, sans-serif;
 	background: transparent;
 }
 
 .auth-form-container input {
 	color: #431b00;
-	font-family: Elephant, sans-serif;
+	font-family: Raleway, sans-serif;
 	background-color: #e7ae70 !important;
 }
 
@@ -22,7 +22,7 @@
 	text-align: center;
   	align-items: center;
   	justify-content: center;
-	  font-family: Elephant, sans-serif;
+	  font-family: Raleway, sans-serif;
 	  color: #431b00;
   }
 
@@ -32,7 +32,7 @@
 	text-align: center;
   	align-items: center;
   	justify-content: center;
-	  font-family: Elephant, sans-serif;
+	  font-family: Raleway, sans-serif;
 	  color: #431b00;
   }
   
@@ -95,7 +95,7 @@
 	  padding-right: 10px;
 	  padding-top: 12px;
 	  font-weight: bold;
-	  font-family: Elephant, sans-serif;
+	  font-family: Sentinel, sans-serif;
 	  font-size: 13px;
 	  color: rgb(68, 24, 9);
   }

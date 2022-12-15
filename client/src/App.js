@@ -60,7 +60,7 @@ function App() {
       const mainposition = positionRef.current / 600;
       const sunposition = positionRef.current / 1000;
       const backgroundposition = 1 - positionRef.current / 900;
-      mainstuff.style.opacity = mainposition;
+      //mainstuff.style.opacity = mainposition;
       sunset.style.opacity = sunposition;
       background.style.opacity = backgroundposition;
     }

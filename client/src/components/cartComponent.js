@@ -58,6 +58,7 @@ const CartComponent = (props) => {
       
   
       if (!already) {
+        (amount > item.stock) ? amount = item.stock : console.log('amount ok');
         cartItems.push({
           id: item.id,
           name: item.name,

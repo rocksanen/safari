@@ -29,17 +29,17 @@ const Profile = ({user}) => {
             </h4>
             <ul>
                 {user.orders && user.orders.map((order)=>{
-                  total += order.quantity;
+                  total += (order.price * order.quantity);
                     return(
                         <li key={order._id}>
-                            {order.name} - {order.quantity} 
+                            {order.name} - {order.quantity} KPL - {order.price} €
                             
                         </li>
                     )
                 })}
             </ul>
             <h4>
-              Total: {total} 
+              Total: {total} €
             </h4>
         </div> : <div></div>}
       </>

@@ -46,18 +46,18 @@ const signupUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   const { id } = req.params
-  
+
   if(!mongoose.Types.ObjectId.isValid(id)){
     return res.status(404).json({error: 'No such user'})
   }
-  const user = await User.findByIdAndUpdate({_id:id}, {
+  
+  const user = await User.findByIdAndUpdate({_id:id}, {$push: {
     ...req.body
-  })
+  }})
 
   if(!user){
     return res.status(400).json({error: 'No such user'})
   }
-
   res.status(200).json(user)
   
 }

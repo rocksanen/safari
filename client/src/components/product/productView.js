@@ -53,8 +53,8 @@ function ProductView({products, setProducts, setLoadProducts, loadProducts}) {
             {user && (
             <div id='active-profile'>
                 <Profile user={user}/>
-                <img className="log-out-button" src={logoutbutton} alt="log-out" onClick={() => {handleSubmit(); setCart([])}} id="logout" />
                 <div id='user-active'>{user.name}</div>
+                <img className="log-out-button" src={logoutbutton} alt="log-out" onClick={() => {handleSubmit(); setCart([])}} id="logout" />
             </div>)}
           </div>
         <ProductMain

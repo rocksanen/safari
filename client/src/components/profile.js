@@ -1,10 +1,14 @@
 import { useState } from "react";
 import profile from "../images/icons/profile.png"
 const Profile = ({user}) => {
+
+  const [orders,setOrders] = useState([]);
   
     const [open, setOpen] =useState(false);
     let total = 0;
     const handleOpen = () => {
+      getOrders(user,setOrders);
+      console.log(orders);
       setOpen(!open);
       //console.log(user.orders);
     };
@@ -28,7 +32,7 @@ const Profile = ({user}) => {
                 Tilauksesi
             </h4>
             <ul>
-                {user.orders && user.orders.map((order)=>{
+                {orders && orders.map((order)=>{
                   total += (order.price * order.quantity);
                     return(
                         <li key={order._id}>
@@ -44,5 +48,16 @@ const Profile = ({user}) => {
         </div> : <div></div>}
       </>
     );
+}
+
+const getOrders = async(user,setOrders)=>{
+  const API_URL = 'http://localhost:4000/api/'
+  try {
+    const response = await fetch(API_URL + `user/${user.id}`);
+    const json = await response.json();
+    response.ok ? setOrders(json.orders) : setOrders(user.orders);    
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 export default Profile;

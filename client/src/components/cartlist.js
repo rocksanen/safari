@@ -45,19 +45,15 @@ const CartList = (props) => {
         quantity: cartItems[i].qty
       })
     }
-    //console.log(reqBody, user);
     sendToDB(reqBody,user)
   }
 
  
-
   const sendToDB = async(reqBody,user) => {
 
     const API_URL = "http://localhost:4000/api";
         
     try{
-      console.log("cartlist log:",reqBody);
-      console.log(user.id, 'jepuli');
       const response = await fetch(API_URL +`/user/${user.id}`, {
         method: 'PATCH',
         body: JSON.stringify({orders: reqBody}),

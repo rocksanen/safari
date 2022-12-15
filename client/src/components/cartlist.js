@@ -69,7 +69,7 @@ const CartList = (props) => {
       }
 
 
-      const updateProductStock = (cartItems,products,setProducts) =>{
+      const updateProductStock = (cartItems,products) =>{
 
         for(let i = 0; i < cartItems.length; i++) {
       
@@ -80,14 +80,14 @@ const CartList = (props) => {
                 const object = products[j]
                 const id = object.id
                 const stockAmount = object.stock - cartItems[i].qty
-                sendStockToDB(stockAmount,id,products,setProducts)
+                sendStockToDB(stockAmount,id)
             }
           }
         }  
       }
       
       
-      const sendStockToDB = async (stockAmount, id,products,setProducts) => {
+      const sendStockToDB = async (stockAmount, id) => {
       
         try{
         
@@ -98,36 +98,12 @@ const CartList = (props) => {
           })
               
             if (!response.ok) {console.log('Whoopsie, could not fetch')}  
-            fetchProductAfterBuy(setProducts,products) 
             return response
       
         }catch(error) {console.error(error.message)}
       }
 
 
-
-      const fetchProductAfterBuy = async (setProducts,products) => {
-        
-        const API_URL = "http://localhost:4000/api";
-
-        try {
-          // Make the API request.
-          //console.log("getting json");
-          const response = await fetch(API_URL + "/products/");
-          //console.log("response received");
-          // Get the JSON data from the response.
-          const json = await response.json();
-          // If the response was successful, set the products state to the JSON data.
-          // Otherwise, set the products state to an empty array.
-          response.ok ? setProducts(json) : setProducts([]);
-        } catch (error) {
-          // If an error occurred, log the error message to the console.
-    
-          console.error(error.message);
-          // Set the products state to an empty array.
-          setProducts(products = []);
-        }
-      };
 
 
   

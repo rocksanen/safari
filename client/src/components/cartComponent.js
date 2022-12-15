@@ -8,7 +8,7 @@ const CartComponent = (props) => {
     const [error,setError] = useState(null);
     const { user } = useAuthContext();
   
-    const dothis = () => {
+    const passToSetCart = () => {
   
       user ? props.setCart(addItem(props.item, props.cartItems, props.setSideOpen)) : (() => setError('You must be logged in'))();
   
@@ -26,7 +26,7 @@ const CartComponent = (props) => {
         ></input>
         <button
           className="add-to-cart-button"
-          onClick={() => {dothis(); props.setCount(props.count + 1)}}
+          onClick={() => {passToSetCart(); props.setCount(props.count + 1)}}
         >
           Add to cart
         </button>

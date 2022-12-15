@@ -1,5 +1,4 @@
-import React from "react";
-import './filter.css';
+import '../../styles/filter.css';
 
 const Filter = ({value, onChange}) => {
     return (

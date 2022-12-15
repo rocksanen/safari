@@ -1,8 +1,8 @@
-import stars from "../images/backGroundImages/stars.png";
-import sun from "../images/backGroundImages/sun.png";
-import trees from "../images/backGroundImages/treesandmountains.png";
-import sunset from "../images/backGroundImages/sunset.png";
-import "../styles/background.css";
+import stars from "../../images/backGroundImages/stars.png";
+import sun from "../../images/backGroundImages/sun.png";
+import trees from "../../images/backGroundImages/treesandmountains.png";
+import sunset from "../../images/backGroundImages/sunset.png";
+import "../../styles/background.css";
 
 const Background = () => (
   <header id="parallerheader">

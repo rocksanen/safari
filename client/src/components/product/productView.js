@@ -1,15 +1,15 @@
-import "../styles/productView.css";
+import "../../styles/productView.css";
 import { useState } from "react";
 import Sidebar from "./sidebar";
 import ProductMain from "./productMainArea";
-import LoginBar from "./loginbar";
-import Filter from "./filter/Filter";
-import Cart from "./Cart";
-import Form from "./form/Form";
-import {useAuthContext} from "../hooks/useAuthContext";
-import {useLogout} from "../hooks/useLogout";
-import Profile from "./profile";
-import logoutbutton from '../images/icons/logout.png'
+import LoginBar from "../user/loginbar";
+import Filter from "../filter/Filter";
+import Cart from "../cart/Cart";
+import Form from "../form/Form";
+import {useAuthContext} from "../../hooks/useAuthContext";
+import {useLogout} from "../../hooks/useLogout";
+import Profile from "../user/profile";
+import logoutbutton from '../../images/icons/logout.png'
 import { useEffect } from "react";
 
 function ProductView({products, setProducts, setLoadProducts, loadProducts}) {

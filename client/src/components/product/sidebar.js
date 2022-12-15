@@ -1,5 +1,5 @@
 
-import '../styles/productView.css';
+import '../../styles/productView.css';
 import ProductDetails from './productDetails';
 
 const Sidebar = ({ product, setSideOpen, sideOpen, setCart, cartItems, count, setCount }) => {

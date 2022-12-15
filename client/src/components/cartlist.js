@@ -3,8 +3,6 @@ import { useAuthContext } from "../hooks/useAuthContext";
 const CartList = (props) => {
   const { user } = useAuthContext();
 
-  console.log(user, 'start');
-
   let total = 0;
 
     return (
@@ -22,15 +20,15 @@ const CartList = (props) => {
       </ul>
       <span className="cart-bottom">
         <p>Total: {total} €</p>
-        <button id="buy-button" onClick={() => Buy(props.cartItems,user, props.products)}>OSTA KAIKKI</button>
+        <button id="buy-button" onClick={() => Buy(props.cartItems,user, props.products, props.setProducts)}>OSTA KAIKKI</button>
       </span>
       </>
     )
   }
 
-  const Buy = (cartItems,user,products) =>{
+  const Buy = (cartItems,user,products, setProducts) =>{
     updateUser(cartItems,user)
-    updateProductStock(cartItems,products)
+    updateProductStock(cartItems,products,setProducts)
     }
 
   const updateUser = async (cartItems,user) => {
@@ -43,7 +41,7 @@ const CartList = (props) => {
         quantity: cartItems[i].qty
       })
     }
-    console.log(reqBody, user);
+    //console.log(reqBody, user);
     sendToDB(reqBody,user)
   }
 
@@ -71,7 +69,7 @@ const CartList = (props) => {
       }
 
 
-      const updateProductStock = (cartItems,products) =>{
+      const updateProductStock = (cartItems,products,setProducts) =>{
 
         for(let i = 0; i < cartItems.length; i++) {
       
@@ -82,14 +80,14 @@ const CartList = (props) => {
                 const object = products[j]
                 const id = object.id
                 const stockAmount = object.stock - cartItems[i].qty
-                sendStockToDB(stockAmount,id)
+                sendStockToDB(stockAmount,id,products,setProducts)
             }
           }
         }  
       }
       
       
-      const sendStockToDB = async (stockAmount, id) => {
+      const sendStockToDB = async (stockAmount, id,products,setProducts) => {
       
         try{
         
@@ -99,11 +97,37 @@ const CartList = (props) => {
             headers: {'Content-Type' : 'application/json'}
           })
               
-            if (!response.ok) {console.log('Whoopsie, could not fetch')}   
+            if (!response.ok) {console.log('Whoopsie, could not fetch')}  
+            fetchProductAfterBuy(setProducts,products) 
             return response
       
         }catch(error) {console.error(error.message)}
       }
+
+
+
+      const fetchProductAfterBuy = async (setProducts,products) => {
+        
+        const API_URL = "http://localhost:4000/api";
+
+        try {
+          // Make the API request.
+          //console.log("getting json");
+          const response = await fetch(API_URL + "/products/");
+          //console.log("response received");
+          // Get the JSON data from the response.
+          const json = await response.json();
+          // If the response was successful, set the products state to the JSON data.
+          // Otherwise, set the products state to an empty array.
+          response.ok ? setProducts(json) : setProducts([]);
+        } catch (error) {
+          // If an error occurred, log the error message to the console.
+    
+          console.error(error.message);
+          // Set the products state to an empty array.
+          setProducts(products = []);
+        }
+      };
 
 
   

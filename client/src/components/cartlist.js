@@ -39,6 +39,7 @@ const CartList = (props) => {
     for(let i = 0; i<cartItems.length; i++) {
       reqBody.push( {
         name: cartItems[i].name,
+        price: cartItems[i].item.price,
         quantity: cartItems[i].qty
       })
     }
@@ -53,7 +54,7 @@ const CartList = (props) => {
     const API_URL = "http://localhost:4000/api";
         
     try{
-      console.log(reqBody);
+      console.log("cartlist log:",reqBody);
       console.log(user.id, 'jepuli');
       const response = await fetch(API_URL +`/user/${user.id}`, {
         method: 'PATCH',

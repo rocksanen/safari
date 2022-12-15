@@ -5,13 +5,15 @@
     min-height:35px;
     text-align:center;
     transition: all 700ms ease;
+    padding-bottom: 10px;
+    padding-right: 20px;
   }
   
   #badge{
     height: 20px;
     width: 0.5px;
-    background-color: rgba(162, 208, 24, 0.77);
-    color: white;
+    background-color: rgb(255, 217, 147);
+    color: #441809;
     font-size: 9px;
     font-weight: bold;
     position: relative;
@@ -34,7 +36,7 @@
     font-size: 35px;
     opacity: 1;
     z-index: 2;
-    color: #7a6abd;
+    color: #561f00;
     position: relative;
   }
 

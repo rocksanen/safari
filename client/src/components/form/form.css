@@ -11,6 +11,8 @@ h1{
     flex-direction: row;
     justify-content: center;
     margin-bottom: 0px !important;
+    font-family: Elephant, sans-serif;
+    color: #2c1006;
 }
 
 .site-header:not(.scroll-header) .custom-logo-link img {
@@ -25,18 +27,20 @@ h1{
 }
 
 .contact__option{
-    background: rgba(182, 169, 169, 0.596);
+    background: rgba(0, 0, 0, 0.12);
     padding: 1.2rem;
     border-radius: 1.2rem;
     text-align: center;
     transition: all 600ms ease;
     border: 1px solid transparent;
+    font-family: Elephant, sans-serif;
+    color: #431b00;
 
 }
 
 .contact__option:hover {
     background: transparent;
-    border-color: rgb(236, 226, 226);
+    border-color: rgba(236, 226, 226, 0.09);
 }
 
 .icon{
@@ -47,12 +51,13 @@ h1{
     margin-top: 0.7rem;
     display: inline-block;
     font-size: 0.8rem;
-    color: rgba(182, 169, 169, 0.596);
+    font-family: Elephant, sans-serif;
+    color: #431b00;
     transition: all 600ms ease;
 }
 
 .contact__option a:hover {
-    color: rgba(204, 197, 197, 0.85);
+    color: rgba(67, 27, 0, 0.55);
 }
 
 #contact {
@@ -75,27 +80,45 @@ input, textarea {
     width: 100%;
     padding: 1.2rem;
     border-radius: 0.5rem;
-    background: rgba(204, 197, 197, 0.85);
+    background: rgba(0, 0, 0, 0.12);
     border: 0px;
     resize: none;
-    color: white;
+    color: #431b00;
+    font-family: Elephant, sans-serif;
 }
+
+input, textarea::placeholder {
+    font-family: Elephant, sans-serif;
+    color: #431b00;
+}
+
+input[name=email]::placeholder {
+    font-family: Elephant, sans-serif;
+    color: #431b00;
+}
+
+input[name=name]::placeholder {
+    font-family: Elephant, sans-serif;
+    color: #431b00;
+}
+
 .btn{
     width: max-content;
     display: inline-block;
-    color: #40adbb;
     padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
     cursor: pointer;
     border: 0px;
     margin-bottom: 1.5rem;
-    background: rgba(0, 0, 0 , 0.3);
-    transition: all 400ms ease;
+    color: rgba(255, 221, 148, 0.73);
+    background: rgba(67, 27, 0, 0.78);
+    transition: all 600ms ease;
+    font-family: Elephant, sans-serif;
 }
 
 .btn:hover{
-    color: #9e42f5;
-    background: rgba(0, 0, 0, 0.39);
+    color: #431b00;
+    background: rgba(67, 27, 0, 0.47);
 }
 
 

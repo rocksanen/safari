@@ -8,11 +8,13 @@ const CartComponent = (props) => {
     const [error,setError] = useState(null);
     const { user } = useAuthContext();
   
-    const passToSetCart = () => {
+  const passToSetCart = () => {
   
-      user ? props.setCart(addItem(props.item, props.cartItems, props.setSideOpen)) : (() => setError('You must be logged in'))();
-  
-    }
+    user ? props.setCart
+      (addItem
+        (props.item, props.cartItems, props.setSideOpen)) 
+          : (() => setError('You must be logged in'))();
+  }
     
     return (
       <div className="add-to-cart-complex">
@@ -48,7 +50,7 @@ const CartComponent = (props) => {
           already = true;
 
           if (existing.qty > props.item.stock) {
-            existing.qty = props.item.stock;
+              existing.qty = props.item.stock;
           }
         }
         return console.log("existing: " + existing.name);

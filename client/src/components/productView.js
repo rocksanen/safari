@@ -13,6 +13,7 @@ import logoutbutton from '../images/icons/logout.png'
 import { useEffect } from "react";
 
 function ProductView({products, setProducts, setLoadProducts, loadProducts}) {
+  
     const {user} = useAuthContext();
     const {logout} = useLogout();
     const [sideOpen, setSideOpen] = useState(false);
@@ -29,11 +30,8 @@ function ProductView({products, setProducts, setLoadProducts, loadProducts}) {
     const ItemAfterFilter = filter === '' ? products : products.filter(item => 
     item.name.toLowerCase().includes(filter.toLowerCase()))   
   
-   useEffect(() => {
-
-   },[count])
+    useEffect(() => {},[count])
     
-
  
   return (
     <section className='mainstuff' id='mainstuff' >

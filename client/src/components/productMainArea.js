@@ -20,7 +20,7 @@ const ProductMain = ({setSideOpen,setSelectedProduct,sideOpen,products,setLoadPr
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default ProductMain;

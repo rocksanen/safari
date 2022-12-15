@@ -21,19 +21,19 @@ nav a{
     padding: 0.9rem;
     border-radius: 50%;
     display: flex;
-    color: #40adbb;
+    color: #ffd993;
     font-size: 1.1rem;
     transition: all 400ms ease;
 }
 nav a:hover{
-    background: rgba(0, 0, 0, 0.12);
-    color: #9e42f5;
+    background: rgba(255, 221, 148, 0.21);
+    color: #441809;
 }
 
 nav a.active {
-    background: rgba(106, 106, 106, 0.329);
-    color: white;
+    background: rgba(255, 221, 148, 0.15);
+    color: #ffd793;
 }
 .contact__icon {
-    color: white;
+    color: #ffd58b;
 }

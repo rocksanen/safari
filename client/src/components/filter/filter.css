@@ -1,5 +1,6 @@
 .filter {
-    width: 200px;
+    width: 100%;
+    display: flex;
 }
 
 .searchTerm {
@@ -15,23 +16,30 @@
     flex-direction: column;
   }
 
+.searchTerm::placeholder {
+    font-family: Elephant, sans-serif;
+    color: rgba(68, 24, 9, 0.85);
+}
+
 .searchTerm:hover{
     background: rgba(0, 0, 0, 0.2);
 }
 
   .searchTerm:focus{
-    color: #52b6a4;
+    color: #e7ae70;
   }
   
   @media screen and (max-width: 1000px){
     .filter  {
-        margin-right: 10%;
-        margin-left: 10%;
+        margin-right: 20%;
+        min-width: 100px;
     }
   }
 
 @media screen and (min-width: 1001px) {
     .filter {
-        margin-right: 40%;
+        position: center;
+        margin-right: 250px;
+        justify-content: center;
     }
 }

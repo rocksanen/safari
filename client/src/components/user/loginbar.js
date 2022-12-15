@@ -12,7 +12,7 @@ const LoginBar = ({setSideOpen, sideOpen}) => {
             <div className="login-side-panel-toggle-wrapper">
                 <div className="login-side-panel-toggle"
                     onClick={() => setSideOpen(!sideOpen)}>
-                    {!user ? <p className="logintext">{sideOpen ? '> Login' : '< Login' }<Link to="/login"></Link></p> : 'logged in' }
+                    {!user ? <p className="logintext">{sideOpen ? '> Login' : '< Login' }<Link to="/login"></Link></p> : 'Kirjautunut' }
                 </div>
             </div>
             {!user && <SignInUp visible={sideOpen}/>}

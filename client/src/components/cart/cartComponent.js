@@ -10,7 +10,7 @@ const CartComponent = (props) => {
   
     const passToSetCart = () => {
   
-      user ? props.setCart(addItem(props.item, props.cartItems, props.setSideOpen)) : (() => setError('You must be logged in'))();
+      user ? props.setCart(addItem(props.item, props.cartItems, props.setSideOpen)) : (() => setError('Kirjaudu sisään ensin!'))();
   
     }
     
@@ -28,7 +28,7 @@ const CartComponent = (props) => {
           className="add-to-cart-button"
           onClick={() => {passToSetCart(); props.setCount(props.count + 1)}}
         >
-          Add to cart
+          Lisää ostoskoriin
         </button>
         {error && <div className="error">{error}</div>}
         <b id="total"></b>

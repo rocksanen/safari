@@ -62,6 +62,17 @@ const updateUser = async (req, res) => {
   
 }
 
+
+const getUser = async (req, res) =>{
+  const { id } = req.params;
+
+  if(!mongoose.Types.ObjectId.isValid(id)){
+    return res.status(404).json({error: 'No such user'})
+  }
+
+  const user = await User.findById({_id:id})
+  res.status(200).json(user);
+}
 // For test purposes only!!!!!
 const getUsers = async (req, res) => {
   
@@ -69,4 +80,4 @@ const getUsers = async (req, res) => {
   res.status(200).json(users)
 }
 // getUsers can be removed after not neede anymore
-module.exports = { signupUser, loginUser, getUsers, updateUser }
+module.exports = { signupUser, loginUser, getUsers, updateUser, getUser }

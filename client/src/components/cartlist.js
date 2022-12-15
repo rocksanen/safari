@@ -22,15 +22,19 @@ const CartList = (props) => {
       </ul>
       <span className="cart-bottom">
         <p>Total: {total} €</p>
-        <button id="buy-button" onClick={() => Buy(props.cartItems,user, props.products)}>OSTA KAIKKI</button>
+        <button id="buy-button" onClick={() => Buy(props.cartItems,user, props.products, props.setCart, props.setCartOpen)}>OSTA KAIKKI</button>
       </span>
       </>
     )
   }
 
-  const Buy = (cartItems,user,products) =>{
+  const Buy = (cartItems,user,products, setCart, setCartOpen) =>{
+
     updateUser(cartItems,user)
     updateProductStock(cartItems,products)
+    setCart([]);
+    setCartOpen(false);
+
     }
 
   const updateUser = async (cartItems,user) => {

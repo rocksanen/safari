@@ -277,14 +277,20 @@ li.product-details-list-item {
   justify-content: space-between;
   min-width: 340px;
   min-height: 400px;
-  background-color: rgba(68, 24, 9, 0.93);
+  background-color: rgba(68, 34, 9, 0.94);
+  font-family: Elephant, sans-serif;
   border-radius: 3%;
-  box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
+  box-shadow: 4px 4px 4px rgba(38, 16, 0, 0.68);
   position: absolute;
   left: 0;
   z-index: 999;
   margin-top: 50px;
   margin-right: 45px;
+  transition: all 700ms ease;
+}
+
+.cart-box:hover {
+  background-color: rgb(68, 34, 9);
 }
 
 .cart-box * {
@@ -456,12 +462,18 @@ li.product-details-list-item {
   border-radius: 3%;
   box-shadow: 4px 4px 4px rgb(0 0 0 / 68%);
   position: absolute;
-  right: 0;
+  left: 0;
   z-index: 994;
   margin-top: 80px;
   margin-right: 20px;
   align-items: center;
   color: #441809;
+  transition: all 700ms ease;
+  font-family: Elephant, sans-serif;
+}
+
+#profile-info:hover {
+  background-color: rgb(255, 193, 94);
 }
 
 .log-out-button {

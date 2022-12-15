@@ -18,7 +18,7 @@ const Profile = ({user}) => {
         <img className="profile-button" src={profile} alt="profile-icon" onClick={handleOpen} />
         {open ? <div id="profile-info"> <button className="close-button-profile" onClick={() => setOpen(false)}>x</button>
             <h4>
-              Personal information:
+              Safari-seikkailija:
             </h4>
             <ul>
                 <li key={user._id}>
@@ -43,7 +43,7 @@ const Profile = ({user}) => {
                 })}
             </ul>
             <h4>
-              Total: {total} €
+              Yhteensä: {total} €
             </h4>
         </div> : <div></div>}
       </>

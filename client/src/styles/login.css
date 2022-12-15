@@ -6,8 +6,15 @@
   	justify-content: center;
 	color: #431b00;
 	font-family: Elephant, sans-serif;
-	background-color: rgba(231, 174, 112, 0.58)
+	background: transparent;
 }
+
+.auth-form-container input {
+	color: #431b00;
+	font-family: Elephant, sans-serif;
+	background-color: #e7ae70 !important;
+}
+
 
   .login-form{
 	display: flex;
@@ -63,12 +70,17 @@
 	margin-top: 5%;
 	padding: 5px;
 	background: none;
-	color: #ffdd94;
+	  color: #431b00;
 	  border-width: 0px;
   }
 
   .link-btn a {
-	  color: #ffd993;
+	  color: #431b00;
+  }
+
+  .link-btn:hover {
+	  background: transparent;
+	  color: rgba(68, 24, 9, 0.76);
   }
   #active-profile {
 	  display: flex;

@@ -9,7 +9,6 @@ const CartList = (props) => {
       <>
       <ul className="Cart-box">
         {props.cartItems.map((item) => {
-
           total += item.item.price*item.qty;
           return (
             <li key={item.id}>
